@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Fixed constructors, tests and added javadoc.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battles/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battles/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -48,7 +43,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.24198553" />
   </component>
   <component name="RecentsManager">
@@ -59,7 +54,7 @@
       <recent name="characters" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.BattleTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="demo.Main" />
       <module name="gamewarriorandknight" />
@@ -138,8 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BattleTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstKnightAndKnightFightsAgainstWarriorKnightsLoses" />
         <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstKnight2ExpectWarriorLoses" />
         <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstWarrior2ExpectFirstWarriorWins" />
@@ -156,8 +151,16 @@
       <updated>1668066228641</updated>
       <workItem from="1668066230126" duration="8905000" />
       <workItem from="1668075951508" duration="2300000" />
-      <workItem from="1668085131776" duration="7126000" />
+      <workItem from="1668085131776" duration="9834000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1668100650642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668100650642</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,5 +177,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Fixed constructors, tests and added javadoc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed constructors, tests and added javadoc." />
   </component>
 </project>
