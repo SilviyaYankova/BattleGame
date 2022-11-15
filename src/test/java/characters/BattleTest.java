@@ -1,81 +1,34 @@
 package characters;
 
 import battles.Battle;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class BattleTest {
 
-    Warrior warrior;
-    Warrior knight;
+    @DisplayName("Two warriors fight")
+    @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
+    @MethodSource("testTwoWarriorFight")
+    void testTwoWarriorFight(Warrior warrior1, Warrior warrior2, boolean expected) {
 
-    @BeforeEach
-    void createCharacters() {
-        warrior = new Warrior();
-        knight = new Knight();
+        var test = Battle.fight(warrior1, warrior2);
+
+        assertEquals(expected, test);
     }
 
-    @Test
-    @DisplayName("1. Fight")
-    void whenWarriorFightsAgainstKnightExpectWarriorLoses() {
-        assertFalse(Battle.fight(warrior, knight));
-    }
-
-    @Test
-    @DisplayName("2. Fight")
-    void whenKnightFightsAgainstWarriorExpectKnightWins() {
-        Warrior slevin = new Warrior();
-
-        assertTrue(Battle.fight(knight, slevin));
-    }
-
-    @Test
-    @DisplayName("3. Fight")
-    void whenWarriorFightsAgainstWarriorExpectFirstWarriorWins() {
-        Warrior mars = new Warrior();
-
-        Battle.fight(warrior, mars);
-
-        assertTrue(warrior.isAlive());
-    }
-
-    @Test
-    @DisplayName("4. Fight")
-    void whenKnightFightsAgainstWarrior2ExpectKnightWins() {
-        Battle.fight(knight, warrior);
-
-        assertTrue(knight.isAlive());
-    }
-
-    @Test
-    @DisplayName("5. Fight")
-    void whenWarriorFightsAgainstWarrior2ExpectFirstWarriorWins() {
-        Warrior wife = new Warrior();
-
-        Battle.fight(warrior, wife);
-
-        assertFalse(wife.isAlive());
-    }
-
-    @Test
-    @DisplayName("6. Fight")
-    void whenWarriorFightsAgainstKnight2ExpectWarriorLoses() {
-        Battle.fight(warrior, knight);
-
-        assertTrue(knight.isAlive());
-    }
-
-    @Test
-    @DisplayName("7. Fight")
-    void whenWarriorFightsAgainstKnightAndKnightFightsAgainstWarriorKnightsLoses() {
-        Warrior unitThree = new Warrior();
-
-        boolean fight = Battle.fight(warrior, knight);
-        boolean fight1 = Battle.fight(knight, unitThree);
-        assertFalse(fight);
-        assertFalse(fight1);
+    public static List<Arguments> testTwoWarriorFight() {
+        return List.of(
+                arguments(new Warrior(), new Knight(), false),
+                arguments(new Warrior(), new Warrior(), true),
+                arguments(new Knight(), new Warrior(), true),
+                arguments(new Knight(), new Knight(), true)
+                );
     }
 }

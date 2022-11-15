@@ -31,4 +31,9 @@ public class Warrior {
     private void receiveDamage(int attack) {
          setHealth(health - attack);
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " {health = " + health + "}";
+    }
 }
