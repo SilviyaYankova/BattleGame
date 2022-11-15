@@ -1,8 +1,10 @@
 package characters;
 
 public class Knight extends Warrior {
+    private static final int ATTACK = 7;
 
-    public Knight() {
-        super.setAttack(7);
+    @Override
+    public int getAttack() {
+        return ATTACK;
     }
 }

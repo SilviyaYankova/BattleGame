@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Fixed constructors, tests and added javadoc.">
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Fixed javadoc.">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battles/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +42,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/gamewarriorandknight-master  - desk" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/theme-oldirony.jar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.24198553" />
   </component>
   <component name="RecentsManager">
@@ -82,7 +87,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.whenWarriorFightsAgainstKnight2ExpectWarriorLoses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattleTest.whenKnightFightsAgainstWarriorExpectKnightWins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
@@ -92,13 +97,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="characters" />
       <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
-      <option name="METHOD_NAME" value="whenWarriorFightsAgainstKnight2ExpectWarriorLoses" />
+      <option name="METHOD_NAME" value="whenKnightFightsAgainstWarriorExpectKnightWins" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.whenWarriorFightsAgainstKnightAndKnightFightsAgainstWarriorKnightsLoses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattleTest.whenWarriorFightsAgainstKnightExpectWarriorLoses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
@@ -108,13 +113,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="characters" />
       <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
-      <option name="METHOD_NAME" value="whenWarriorFightsAgainstKnightAndKnightFightsAgainstWarriorKnightsLoses" />
+      <option name="METHOD_NAME" value="whenWarriorFightsAgainstKnightExpectWarriorLoses" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.whenWarriorFightsAgainstWarrior2ExpectFirstWarriorWins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattleTest.whenWarriorFightsAgainstWarriorExpectFirstWarriorWins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
@@ -124,7 +129,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="characters" />
       <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
-      <option name="METHOD_NAME" value="whenWarriorFightsAgainstWarrior2ExpectFirstWarriorWins" />
+      <option name="METHOD_NAME" value="whenWarriorFightsAgainstWarriorExpectFirstWarriorWins" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,10 +138,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BattleTest" />
+        <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstKnightExpectWarriorLoses" />
+        <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstWarriorExpectFirstWarriorWins" />
+        <item itemvalue="JUnit.BattleTest.whenKnightFightsAgainstWarriorExpectKnightWins" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstKnightAndKnightFightsAgainstWarriorKnightsLoses" />
-        <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstKnight2ExpectWarriorLoses" />
-        <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstWarrior2ExpectFirstWarriorWins" />
       </list>
     </recent_temporary>
   </component>
@@ -152,7 +157,11 @@
       <workItem from="1668075951508" duration="2300000" />
       <workItem from="1668085131776" duration="9834000" />
       <workItem from="1668103221862" duration="491000" />
-      <workItem from="1668103735052" duration="663000" />
+      <workItem from="1668103735052" duration="1488000" />
+      <workItem from="1668179570067" duration="603000" />
+      <workItem from="1668180435776" duration="2714000" />
+      <workItem from="1668439325174" duration="1186000" />
+      <workItem from="1668487808972" duration="4929000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -175,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668104003488</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed javadoc.">
+      <created>1668104431613</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668104431613</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +212,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Fixed constructors, tests and added javadoc." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed constructors, tests and added javadoc." />
+    <MESSAGE value="Fixed javadoc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed javadoc." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gamewarriorandknight$BattleTest_whenWarriorFightsAgainstWarriorExpectFirstWarriorWins.ic" NAME="BattleTest.whenWarriorFightsAgainstWarriorExpectFirstWarriorWins Coverage Results" MODIFIED="1668491584474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>characters.*</FILTER>
+    </SUITE>
   </component>
 </project>

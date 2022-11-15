@@ -21,9 +21,7 @@ class BattleTest {
     @Test
     @DisplayName("1. Fight")
     void whenWarriorFightsAgainstKnightExpectWarriorLoses() {
-        boolean fight = Battle.fight(warrior, knight);
-
-        assertFalse(fight);
+        assertFalse(Battle.fight(warrior, knight));
     }
 
     @Test
@@ -78,6 +76,6 @@ class BattleTest {
         boolean fight = Battle.fight(warrior, knight);
         boolean fight1 = Battle.fight(knight, unitThree);
         assertFalse(fight);
-        assertFalse(fight);
+        assertFalse(fight1);
     }
 }

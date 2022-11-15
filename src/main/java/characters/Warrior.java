@@ -1,32 +1,34 @@
 package characters;
 
 public class Warrior {
-    private int attack;
+    private static final int ATTACK = 5;
     private int health;
 
-    public Warrior() {
-        this.attack = 5;
+    protected Warrior() {
         this.health = 50;
-    }
-
-    public boolean isAlive() {
-        return health > 0;
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    protected void setAttack(int attack) {
-        this.attack = attack;
     }
 
     public int getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+    private void setHealth(int health) {
         this.health = health;
     }
 
+    public int getAttack() {
+        return ATTACK;
+    }
+
+    public boolean isAlive() {
+        return this.getHealth() > 0;
+    }
+
+    public void hit(Warrior warrior) {
+        warrior.receiveDamage(getAttack());
+    }
+
+    private void receiveDamage(int attack) {
+         setHealth(health - attack);
+    }
 }
