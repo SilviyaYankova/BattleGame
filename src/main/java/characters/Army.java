@@ -12,13 +12,14 @@ public class Army {
         this.troops = new ArrayList<>();
     }
 
-    public void addUnits(Supplier<Warrior> factory, int quantity) {
+    public Army addUnits(Supplier<Warrior> factory, int quantity) {
         for (int i = 0; i < quantity; i++) {
             troops.add(factory.get());
         }
+        return this;
     }
 
-    public Warrior getWarrior() {
+    public Warrior getFighter() {
         return troops.iterator().next();
     }
 
@@ -26,4 +27,8 @@ public class Army {
         return troops.iterator().hasNext();
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " " + troops.size();
+    }
 }

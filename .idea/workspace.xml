@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Added Army class and implemented .addUnits().">
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Implemented logic for armies battle.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battles/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Army.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/demos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demos/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="settings.editor.splitter.proportion" value="0.24198553" />
   </component>
   <component name="ReaderModeSettings">
@@ -63,7 +63,7 @@
       <recent name="characters" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.BattleTest.testArmiesFight">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="demos.Main" />
       <module name="gamewarriorandknight" />
@@ -88,6 +88,22 @@
       <option name="PACKAGE_NAME" value="characters" />
       <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BattleTest.testArmiesFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gamewarriorandknight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="characters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="characters" />
+      <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
+      <option name="METHOD_NAME" value="testArmiesFight(characters.Army,characters.Army,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,29 +140,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.whenWarriorFightsAgainstWarriorExpectFirstWarriorWins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="characters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="characters" />
-      <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
-      <option name="METHOD_NAME" value="whenWarriorFightsAgainstWarriorExpectFirstWarriorWins" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BattleTest.testArmiesFight" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BattleTest" />
         <item itemvalue="JUnit.BattleTest.testTwoWarriorFight" />
         <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstKnightExpectWarriorLoses" />
-        <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstWarriorExpectFirstWarriorWins" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +166,7 @@
       <workItem from="1668179570067" duration="603000" />
       <workItem from="1668180435776" duration="2714000" />
       <workItem from="1668439325174" duration="1186000" />
-      <workItem from="1668487808972" duration="19361000" />
+      <workItem from="1668487808972" duration="22796000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -224,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668523916060</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implemented logic for armies battle.">
+      <created>1668528717857</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668528717857</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +256,8 @@
     <MESSAGE value="Changes in Warrior." />
     <MESSAGE value="Changes in BattleTest, using ParameterizedTest;" />
     <MESSAGE value="Added Army class and implemented .addUnits()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Army class and implemented .addUnits()." />
+    <MESSAGE value="Implemented logic for armies battle." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented logic for armies battle." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
