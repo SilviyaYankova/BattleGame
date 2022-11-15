@@ -1,25 +1,33 @@
 package battles;
 
+import characters.Army;
 import characters.Warrior;
 
 public class Battle {
 
     /**
      * Fighting between warriors
-     * @param warriorOne always attacks first;
-     * @param warriorTwo always attacks second
+     *
+     * @param warrior1 always attacks first;
+     * @param warrior2 always attacks second
      * @return true if first warrior is alive or false if not
      */
-    public static boolean fight(Warrior warriorOne, Warrior warriorTwo) {
-        while (warriorOne.isAlive() && warriorTwo.isAlive()) {
+    public static boolean fight(Warrior warrior1, Warrior warrior2) {
+        while (warrior1.isAlive() && warrior2.isAlive()) {
 
-            warriorOne.hit(warriorTwo);
+            warrior1.hit(warrior2);
 
-            if (warriorTwo.isAlive()) {
-                warriorTwo.hit(warriorOne);
+            if (warrior2.isAlive()) {
+                warrior2.hit(warrior1);
             }
         }
 
-        return warriorOne.isAlive();
+        return warrior1.isAlive();
+    }
+
+    public static boolean fight(Army army1, Army army2) {
+
+
+        return true;
     }
 }

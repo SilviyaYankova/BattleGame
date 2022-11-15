@@ -4,7 +4,7 @@ public class Warrior {
     private static final int ATTACK = 5;
     private int health;
 
-    protected Warrior() {
+    public Warrior() {
         this.health = 50;
     }
 
