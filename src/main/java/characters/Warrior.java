@@ -36,4 +36,8 @@ public class Warrior {
     public String toString() {
         return getClass().getSimpleName() + " {health = " + health + "}";
     }
+
+    public static Warrior getWarrior(Army army1) {
+        return army1.troops.iterator().next();
+    }
 }

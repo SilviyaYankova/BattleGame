@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 
 public class Army {
 
-    Collection<Warrior> troops;
+    public Collection<Warrior> troops;
 
     public Army() {
         this.troops = new ArrayList<>();
@@ -17,4 +17,13 @@ public class Army {
             troops.add(factory.get());
         }
     }
+
+    public Warrior getWarrior() {
+        return troops.iterator().next();
+    }
+
+    public boolean isAlive() {
+        return troops.iterator().hasNext();
+    }
+
 }

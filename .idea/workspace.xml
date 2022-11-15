@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Changes in BattleTest, using ParameterizedTest;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/characters/Army.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demos/Main.java" afterDir="false" />
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Added Army class and implemented .addUnits().">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battles/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Army.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demos/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="settings.editor.splitter.proportion" value="0.24198553" />
   </component>
   <component name="ReaderModeSettings">
@@ -166,7 +166,7 @@
       <workItem from="1668179570067" duration="603000" />
       <workItem from="1668180435776" duration="2714000" />
       <workItem from="1668439325174" duration="1186000" />
-      <workItem from="1668487808972" duration="14650000" />
+      <workItem from="1668487808972" duration="19361000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -217,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668495788398</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Army class and implemented .addUnits().">
+      <created>1668523916060</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1668523916060</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +248,12 @@
     <MESSAGE value="Fixed javadoc." />
     <MESSAGE value="Changes in Warrior." />
     <MESSAGE value="Changes in BattleTest, using ParameterizedTest;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in BattleTest, using ParameterizedTest;" />
+    <MESSAGE value="Added Army class and implemented .addUnits()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Army class and implemented .addUnits()." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/gamewarriorandknight$BattleTest_whenWarriorFightsAgainstWarriorExpectFirstWarriorWins.ic" NAME="BattleTest.whenWarriorFightsAgainstWarriorExpectFirstWarriorWins Coverage Results" MODIFIED="1668491584474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

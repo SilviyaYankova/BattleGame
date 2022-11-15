@@ -26,8 +26,25 @@ public class Battle {
     }
 
     public static boolean fight(Army army1, Army army2) {
+        Warrior attacker = army1.getWarrior();
+        Warrior defender = army2.getWarrior();
 
+        while (army1.isAlive() && army2.isAlive()) {
+            boolean attackerWins = Battle.fight(attacker, defender);
 
-        return true;
+            if (attackerWins) {
+                army2.troops.remove(defender);
+                if (army2.isAlive()) {
+                    defender = army2.getWarrior();
+                }
+            } else {
+                army1.troops.remove(attacker);
+                if (army1.isAlive()) {
+                    attacker = army1.getWarrior();
+                }
+            }
+        }
+        return !army1.troops.isEmpty();
     }
+
 }
