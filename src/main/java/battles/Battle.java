@@ -1,6 +1,7 @@
 package battles;
 
 import characters.Army;
+import characters.Defender;
 import characters.Warrior;
 
 public class Battle {
@@ -13,6 +14,7 @@ public class Battle {
      * @return true if first warrior is alive or false if not
      */
     public static boolean fight(Warrior warrior1, Warrior warrior2) {
+
         while (warrior1.isAlive() && warrior2.isAlive()) {
 
             warrior1.hit(warrior2);
@@ -33,25 +35,13 @@ public class Battle {
      * @return true if first army wins or false if not
      */
     public static boolean fight(Army army1, Army army2) {
-        Warrior attacker = army1.getFighter();
-        Warrior defender = army2.getFighter();
+        var it1 = army1.fistsAliveIterator();
+        var it2 = army2.fistsAliveIterator();
 
-        while (army1.isAlive() && army2.isAlive()) {
-            boolean attackerWins = Battle.fight(attacker, defender);
-
-            if (attackerWins) {
-                army2.troops.remove(defender);
-                if (army2.isAlive()) {
-                    defender = army2.getFighter();
-                }
-            } else {
-                army1.troops.remove(attacker);
-                if (army1.isAlive()) {
-                    attacker = army1.getFighter();
-                }
-            }
+        while (it1.hasNext() && it2.hasNext()) {
+            fight(it1.next(), it2.next());
         }
-        return !army1.troops.isEmpty();
-    }
 
+        return it1.hasNext();
+    }
 }

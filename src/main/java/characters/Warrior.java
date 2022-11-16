@@ -5,7 +5,11 @@ public class Warrior {
     private int health;
 
     public Warrior() {
-        this.health = 50;
+        this(50);
+    }
+
+    public Warrior(int health) {
+        this.health = health;
     }
 
     public int getHealth() {
@@ -25,19 +29,19 @@ public class Warrior {
     }
 
     public void hit(Warrior warrior) {
-        warrior.receiveDamage(getAttack());
+        if (warrior.getClass() == Defender.class) {
+            warrior.receiveDamage(getAttack() - ((Defender) warrior).getDefense());
+        } else {
+            warrior.receiveDamage(getAttack());
+        }
     }
 
     private void receiveDamage(int attack) {
-         setHealth(health - attack);
+        setHealth(health - attack);
     }
 
     @Override
     public String toString() {
         return getClass().getSimpleName() + " {health = " + health + "}";
-    }
-
-    public static Warrior getWarrior(Army army1) {
-        return army1.troops.iterator().next();
     }
 }

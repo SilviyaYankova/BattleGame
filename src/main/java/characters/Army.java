@@ -2,11 +2,13 @@ package characters;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.function.Supplier;
 
 public class Army {
 
-    public Collection<Warrior> troops;
+    protected Collection<Warrior> troops;
 
     public Army() {
         this.troops = new ArrayList<>();
@@ -19,16 +21,39 @@ public class Army {
         return this;
     }
 
-    public Warrior getFighter() {
-        return troops.iterator().next();
-    }
-
-    public boolean isAlive() {
-        return troops.iterator().hasNext();
-    }
-
     @Override
     public String toString() {
         return getClass().getSimpleName() + " " + troops.size();
+    }
+
+    public Iterator<Warrior> fistsAliveIterator() {
+        return new FirstAliveIterator();
+    }
+
+    class FirstAliveIterator implements Iterator<Warrior> {
+
+        Iterator<Warrior> iterator = troops.iterator();
+        Warrior champion;
+
+        @Override
+        public boolean hasNext() {
+            if (champion == null || !champion.isAlive()) {
+                if ((iterator.hasNext())) {
+                    champion = iterator.next();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        @Override
+        public Warrior next() {
+            if ((!hasNext())) {
+                throw new NoSuchElementException();
+            }
+            return champion;
+        }
     }
 }
