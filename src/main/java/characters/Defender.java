@@ -16,6 +16,4 @@ public class Defender extends Warrior {
     public int getDefense() {
         return DEFENSE;
     }
-
-
 }

@@ -28,13 +28,14 @@ public class Warrior {
         return this.getHealth() > 0;
     }
 
-    public void hit(Warrior warrior) {
-        if (warrior.getClass() == Defender.class) {
-            if (getAttack() >= warrior.getAttack()) {
-            warrior.receiveDamage(getAttack() - ((Defender) warrior).getDefense());
+    public void hit(Warrior opponent) {
+        if (opponent.getClass() == Defender.class) {
+            if (getAttack() >= opponent.getAttack()) {
+            opponent.receiveDamage(
+                    getAttack() - ((Defender) opponent).getDefense());
             }
         } else {
-            warrior.receiveDamage(getAttack());
+            opponent.receiveDamage(getAttack());
         }
     }
 

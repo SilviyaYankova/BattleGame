@@ -1,6 +1,5 @@
 package battles;
 
-import battles.Battle;
 import characters.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -32,12 +31,43 @@ class BattleTest {
                 arguments(new Knight(), new Knight(), true),
                 arguments(new Warrior(), new Warrior(), true),
                 arguments(new Warrior(), new Knight(), false),
-                arguments(new Knight(), new Warrior(), true),
-                arguments(new Defender(), new Rookie(), true),
-                arguments(new Defender(), new Rookie(), true,
-                          new Rookie(), new Defender(), true)
-
+                arguments(new Defender(), new Rookie(), true)
         );
+    }
+
+    @DisplayName("Three warriors fight")
+    @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
+    @MethodSource("testThreeWarriorFight")
+    void testThreeWarriorFight(Warrior warrior1, Warrior warrior2, Warrior warrior3, boolean expected) {
+
+        Battle.fight(warrior1, warrior2);
+        var test = Battle.fight(warrior2, warrior3);
+
+        assertEquals(expected, test);
+    }
+
+    public static List<Arguments> testThreeWarriorFight() {
+        return List.of(
+                arguments(new Warrior(), new Knight(), new Warrior(), false),
+                arguments(new Defender(), new Rookie(), new Warrior(), false)
+        );
+    }
+
+    @DisplayName("Warrior's health")
+    @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
+    @MethodSource("testWarriorHealth")
+    void testWarriorsHealth(Warrior warrior1, Warrior warrior2, int health) {
+
+        Battle.fight(warrior2, warrior2);
+
+        assertEquals(health, warrior1.getHealth());
+    }
+
+    public static List<Arguments> testWarriorHealth() {
+        return List.of(
+                arguments(new Defender(), new Rookie(), 60)
+        );
+
     }
 
     @DisplayName("Two armies fight")
