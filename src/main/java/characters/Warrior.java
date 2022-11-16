@@ -30,7 +30,9 @@ public class Warrior {
 
     public void hit(Warrior warrior) {
         if (warrior.getClass() == Defender.class) {
+            if (getAttack() >= warrior.getAttack()) {
             warrior.receiveDamage(getAttack() - ((Defender) warrior).getDefense());
+            }
         } else {
             warrior.receiveDamage(getAttack());
         }

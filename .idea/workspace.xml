@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Implemented Defender class and its logic about defence.">
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Added Tests for Defender.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/characters/Rookie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/characters/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="settings.editor.splitter.proportion" value="0.24198553" />
   </component>
   <component name="ReaderModeSettings">
@@ -56,6 +58,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="battles" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="characters" />
     </key>
@@ -64,7 +69,7 @@
       <recent name="characters" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BattleTest">
+  <component name="RunManager" selected="JUnit.BattleTest.testArmiesFight">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="demos.Main" />
       <module name="gamewarriorandknight" />
@@ -82,12 +87,12 @@
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="characters.*" />
+          <option name="PATTERN" value="battles.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="characters" />
-      <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
+      <option name="PACKAGE_NAME" value="battles" />
+      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,12 +102,12 @@
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="characters.*" />
+          <option name="PATTERN" value="battles.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="characters" />
-      <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
+      <option name="PACKAGE_NAME" value="battles" />
+      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
       <option name="METHOD_NAME" value="testArmiesFight(characters.Army,characters.Army,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -113,12 +118,12 @@
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="characters.*" />
+          <option name="PATTERN" value="battles.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="characters" />
-      <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
+      <option name="PACKAGE_NAME" value="battles" />
+      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
       <option name="METHOD_NAME" value="testTwoWarriorFight(characters.Warrior,characters.Warrior,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -129,12 +134,12 @@
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="characters.*" />
+          <option name="PATTERN" value="battles.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="characters" />
-      <option name="MAIN_CLASS_NAME" value="characters.BattleTest" />
+      <option name="PACKAGE_NAME" value="battles" />
+      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
       <option name="METHOD_NAME" value="whenWarriorFightsAgainstKnightExpectWarriorLoses" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -143,10 +148,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BattleTest" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BattleTest.testArmiesFight" />
         <item itemvalue="JUnit.BattleTest.testTwoWarriorFight" />
+        <item itemvalue="JUnit.BattleTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BattleTest.whenWarriorFightsAgainstKnightExpectWarriorLoses" />
       </list>
     </recent_temporary>
@@ -169,7 +174,7 @@
       <workItem from="1668439325174" duration="1186000" />
       <workItem from="1668487808972" duration="28597000" />
       <workItem from="1668578018439" duration="1653000" />
-      <workItem from="1668580389526" duration="3417000" />
+      <workItem from="1668580389526" duration="5580000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -248,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668582478254</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added Tests for Defender.">
+      <created>1668584099056</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668584099056</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +288,8 @@
     <MESSAGE value="Implemented logic for armies battle." />
     <MESSAGE value="Added tests for army battles." />
     <MESSAGE value="Implemented Defender class and its logic about defence." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Defender class and its logic about defence." />
+    <MESSAGE value="Added Tests for Defender." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Tests for Defender." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

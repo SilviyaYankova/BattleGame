@@ -1,6 +1,7 @@
-package characters;
+package battles;
 
 import battles.Battle;
+import characters.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -24,14 +25,23 @@ class BattleTest {
     }
 
     public static List<Arguments> testTwoWarriorFight() {
-        return List.of(arguments(new Warrior(), new Knight(), false),
-                       arguments(new Warrior(), new Warrior(), true),
-                       arguments(new Knight(), new Warrior(), true),
-                       arguments(new Knight(), new Knight(), true));
+        return List.of(
+                arguments(new Warrior(), new Knight(), false),
+                arguments(new Knight(), new Warrior(), true),
+                arguments(new Warrior(), new Warrior(), true),
+                arguments(new Knight(), new Knight(), true),
+                arguments(new Warrior(), new Warrior(), true),
+                arguments(new Warrior(), new Knight(), false),
+                arguments(new Knight(), new Warrior(), true),
+                arguments(new Defender(), new Rookie(), true),
+                arguments(new Defender(), new Rookie(), true,
+                          new Rookie(), new Defender(), true)
+
+        );
     }
 
     @DisplayName("Two armies fight")
-    @ParameterizedTest(name = "{0} fights against {1}, expected  result = {2}")
+    @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
     @MethodSource("testArmiesFight")
     void testArmiesFight(Army army1, Army army2, boolean expected) {
 
