@@ -31,9 +31,14 @@ class BattleTest {
                 arguments(new Knight(), new Knight(), true),
                 arguments(new Warrior(), new Warrior(), true),
                 arguments(new Warrior(), new Knight(), false),
-                arguments(new Defender(), new Rookie(), true)
+                arguments(new Defender(), new Rookie(), true),
+                arguments(new Defender(), new Vampire(), true),
+                arguments(new Vampire(), new Defender(), false),
+                arguments(new Warrior(), new Vampire(), true)
+
         );
     }
+
 
     @DisplayName("Three warriors fight")
     @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
@@ -53,6 +58,7 @@ class BattleTest {
         );
     }
 
+
     @DisplayName("Warrior's health")
     @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
     @MethodSource("testWarriorHealth")
@@ -69,6 +75,7 @@ class BattleTest {
         );
 
     }
+
 
     @DisplayName("Two armies fight")
     @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
@@ -127,7 +134,50 @@ class BattleTest {
                           false),
                 arguments(new Army().addUnits(Knight::new, 3),
                           new Army().addUnits(Warrior::new, 3),
+                          true),
+                arguments(new Army().addUnits(Defender::new, 2)
+                                    .addUnits(Vampire::new, 2)
+                                    .addUnits(Warrior::new, 1),
+                          new Army().addUnits(Warrior::new, 2)
+                                    .addUnits(Defender::new, 2)
+                                    .addUnits(Vampire::new, 3),
+                          false),
+                arguments(new Army().addUnits(Defender::new, 5)
+                                    .addUnits(Vampire::new, 6)
+                                    .addUnits(Warrior::new, 7),
+                          new Army().addUnits(Warrior::new, 6)
+                                    .addUnits(Defender::new, 6)
+                                    .addUnits(Vampire::new, 6),
+                          true),
+                arguments(new Army().addUnits(Defender::new, 2)
+                                    .addUnits(Vampire::new, 3)
+                                    .addUnits(Warrior::new, 4),
+                          new Army().addUnits(Warrior::new, 4)
+                                    .addUnits(Defender::new, 4)
+                                    .addUnits(Vampire::new, 3),
+                          false),
+                arguments(new Army().addUnits(Defender::new, 11)
+                                    .addUnits(Vampire::new, 3)
+                                    .addUnits(Warrior::new, 4),
+                          new Army().addUnits(Warrior::new, 4)
+                                    .addUnits(Defender::new, 4)
+                                    .addUnits(Vampire::new, 13),
+                          true),
+                arguments(new Army().addUnits(Defender::new, 9)
+                                    .addUnits(Vampire::new, 3)
+                                    .addUnits(Warrior::new, 8),
+                          new Army().addUnits(Warrior::new, 4)
+                                    .addUnits(Defender::new, 4)
+                                    .addUnits(Vampire::new, 13),
+                          true),
+                arguments(new Army().addUnits(Vampire::new, 1)
+                                    .addUnits(Warrior::new, 4),
+                          new Army().addUnits(Vampire::new, 3)
+                                    .addUnits(Warrior::new, 2),
                           true)
+
         );
     }
+
+
 }

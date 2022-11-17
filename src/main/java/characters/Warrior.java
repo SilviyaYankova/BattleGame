@@ -16,7 +16,7 @@ public class Warrior {
         return health;
     }
 
-    private void setHealth(int health) {
+    protected void setHealth(int health) {
         this.health = health;
     }
 

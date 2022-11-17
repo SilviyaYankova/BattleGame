@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Updated Tests.">
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Overriding the receiveDamage method in Defender.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Defender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Defender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/demos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demos/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +99,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BattleTest.testArmiesFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gamewarriorandknight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="battles.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="battles" />
+      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
+      <option name="METHOD_NAME" value="testArmiesFight(characters.Army,characters.Army,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BattleTest.testThreeWarriorFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
@@ -130,29 +147,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.testWarriorsHealth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="battles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
-      <option name="METHOD_NAME" value="testWarriorsHealth(characters.Warrior,characters.Warrior,int)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BattleTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.BattleTest.testThreeWarriorFight" />
+        <item itemvalue="JUnit.BattleTest.testArmiesFight" />
         <item itemvalue="JUnit.BattleTest.testTwoWarriorFight" />
-        <item itemvalue="JUnit.BattleTest.testWarriorsHealth" />
+        <item itemvalue="JUnit.BattleTest.testThreeWarriorFight" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +180,7 @@
       <workItem from="1668594588148" duration="1204000" />
       <workItem from="1668607219373" duration="8555000" />
       <workItem from="1668628145393" duration="1581000" />
-      <workItem from="1668670452892" duration="303000" />
+      <workItem from="1668670452892" duration="3573000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -279,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668615281294</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Overriding the receiveDamage method in Defender.">
+      <created>1668670802025</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1668670802025</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +317,24 @@
     <MESSAGE value="Implemented Defender class and its logic about defence." />
     <MESSAGE value="Added Tests for Defender." />
     <MESSAGE value="Updated Tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Tests." />
+    <MESSAGE value="Overriding the receiveDamage method in Defender." />
+    <option name="LAST_COMMIT_MESSAGE" value="Overriding the receiveDamage method in Defender." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/demos/Main.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/battles/Battle.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
