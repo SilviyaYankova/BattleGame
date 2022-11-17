@@ -1,7 +1,6 @@
 package demos;
 
 import battles.Battle;
-import characters.Army;
 import characters.Defender;
 import characters.Warrior;
 

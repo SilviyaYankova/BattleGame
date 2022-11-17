@@ -16,4 +16,11 @@ public class Defender extends Warrior {
     public int getDefense() {
         return DEFENSE;
     }
+
+    @Override
+    protected void receiveDamage(int attack) {
+        if (attack >= getAttack()) {
+            super.receiveDamage(attack - getDefense());
+        }
+    }
 }

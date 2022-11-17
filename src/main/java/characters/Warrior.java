@@ -29,17 +29,10 @@ public class Warrior {
     }
 
     public void hit(Warrior opponent) {
-        if (opponent.getClass() == Defender.class) {
-            if (getAttack() >= opponent.getAttack()) {
-            opponent.receiveDamage(
-                    getAttack() - ((Defender) opponent).getDefense());
-            }
-        } else {
-            opponent.receiveDamage(getAttack());
-        }
+        opponent.receiveDamage(getAttack());
     }
 
-    private void receiveDamage(int attack) {
+    protected void receiveDamage(int attack) {
         setHealth(health - attack);
     }
 
