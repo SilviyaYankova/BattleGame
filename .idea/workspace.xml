@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Overriding the receiveDamage method in Defender.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" afterDir="false" />
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Implemented Vampire class and tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demos/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +178,7 @@
       <workItem from="1668594588148" duration="1204000" />
       <workItem from="1668607219373" duration="8555000" />
       <workItem from="1668628145393" duration="1581000" />
-      <workItem from="1668670452892" duration="3573000" />
+      <workItem from="1668670452892" duration="4667000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -287,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668670802025</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Implemented Vampire class and tests.">
+      <created>1668674213725</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1668674213725</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +323,8 @@
     <MESSAGE value="Added Tests for Defender." />
     <MESSAGE value="Updated Tests." />
     <MESSAGE value="Overriding the receiveDamage method in Defender." />
-    <option name="LAST_COMMIT_MESSAGE" value="Overriding the receiveDamage method in Defender." />
+    <MESSAGE value="Implemented Vampire class and tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Vampire class and tests." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
