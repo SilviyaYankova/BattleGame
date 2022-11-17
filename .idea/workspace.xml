@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Implemented Vampire class and tests.">
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Initial commit of the branch.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -146,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BattleTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.BattleTest.testArmiesFight" />
         <item itemvalue="JUnit.BattleTest.testTwoWarriorFight" />
         <item itemvalue="JUnit.BattleTest.testThreeWarriorFight" />
+        <item itemvalue="JUnit.BattleTest.testArmiesFight" />
+        <item itemvalue="JUnit.BattleTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +181,7 @@
       <workItem from="1668594588148" duration="1204000" />
       <workItem from="1668607219373" duration="8555000" />
       <workItem from="1668628145393" duration="1581000" />
-      <workItem from="1668670452892" duration="9623000" />
+      <workItem from="1668670452892" duration="12546000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -305,7 +309,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668695901183</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Implemented Vampire class and tests.">
+      <created>1668698744141</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1668698744141</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Initial commit of the branch.">
+      <created>1668711237134</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1668711237134</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +355,8 @@
     <MESSAGE value="Updated Tests." />
     <MESSAGE value="Overriding the receiveDamage method in Defender." />
     <MESSAGE value="Implemented Vampire class and tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Vampire class and tests." />
+    <MESSAGE value="Initial commit of the branch." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit of the branch." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
