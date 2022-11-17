@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Implemented Vampire class and tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BattleTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.BattleTest.testArmiesFight" />
         <item itemvalue="JUnit.BattleTest.testTwoWarriorFight" />
         <item itemvalue="JUnit.BattleTest.testThreeWarriorFight" />
+        <item itemvalue="JUnit.BattleTest.testArmiesFight" />
+        <item itemvalue="JUnit.BattleTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
