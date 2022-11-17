@@ -19,7 +19,7 @@ public class Defender extends Warrior {
 
     @Override
     protected void receiveDamage(int attack) {
-        if (attack >= getAttack()) {
+        if (attack > getDefense()) {
             super.receiveDamage(attack - getDefense());
         }
     }

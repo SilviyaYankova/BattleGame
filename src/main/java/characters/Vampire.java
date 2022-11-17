@@ -14,15 +14,19 @@ public class Vampire extends Warrior {
         return ATTACK;
     }
 
+    public int getVampirism() {
+        return VAMPIRISM;
+    }
+
     @Override
     public void hit(Warrior opponent) {
         if (opponent.getClass() == Defender.class) {
             setHealth(
                     getHealth() +
-                            (getAttack() - ((Defender) opponent).getDefense()) * VAMPIRISM / 100
+                            (getAttack() - ((Defender) opponent).getDefense()) * getVampirism() / 100
             );
         } else {
-            setHealth(getHealth() + getAttack() * VAMPIRISM / 100);
+            setHealth(getHealth() + getAttack() * getVampirism() / 100);
         }
         super.hit(opponent);
     }
