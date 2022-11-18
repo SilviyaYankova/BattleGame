@@ -9,7 +9,6 @@ import characters.Warrior;
 public class Main {
     public static void main(String[] args) {
 
-
-        // testing
+            Battle.fight(new Defender(), new Vampire());
+        }
     }
-}

@@ -3,12 +3,14 @@ package characters;
 public class Warrior {
     private static final int ATTACK = 5;
     private int health;
+    private final int initialHealth;
 
     public Warrior() {
         this(50);
     }
 
-    public Warrior(int health) {
+    protected Warrior(int health) {
+        this.initialHealth = health;
         this.health = health;
     }
 
@@ -16,8 +18,12 @@ public class Warrior {
         return health;
     }
 
-    protected void setHealth(int health) {
-        this.health = health;
+    private void setHealth(int health) {
+        this.health = Math.min(initialHealth, health);
+    }
+
+    protected void healBy(int healPoints) {
+        setHealth(getHealth() + healPoints);
     }
 
     public int getAttack() {
