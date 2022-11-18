@@ -20,11 +20,12 @@ public class Vampire extends Warrior {
 
     @Override
     public void hit(Warrior opponent) {
-        if (opponent.getClass() == Defender.class) {
-            setHealth(getHealth() + (getAttack() - ((Defender) opponent).getDefense()) * getVampirism() / 100);
-        } else {
-            setHealth(getHealth() + getAttack() * getVampirism() / 100);
-        }
+        int healthBeforeAttacked = opponent.getHealth();
         super.hit(opponent);
+        int healthAfterAttacked = opponent.getHealth();
+        int damage = healthBeforeAttacked - healthAfterAttacked;
+        int percentages = 100;
+        int healPoints = damage * getVampirism() / percentages;
+        healBy(healPoints);
     }
 }

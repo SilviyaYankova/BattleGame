@@ -20,7 +20,7 @@ public class Defender extends Warrior {
     @Override
     protected void receiveDamage(int attack) {
         if (attack > getDefense()) {
-            super.receiveDamage(attack - getDefense());
+            super.receiveDamage(Math.max(0, attack - getDefense()));
         }
     }
 }
