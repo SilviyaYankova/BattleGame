@@ -20,18 +20,17 @@ public class Lancer extends Warrior {
     public void hit(Warrior opponent) {
         int healthBeforeAttacked = opponent.getHealth();
         super.hit(opponent);
-        int healthAfterAttacked = opponent.getHealth();
-        int damage = healthBeforeAttacked - healthAfterAttacked;
 
-        List<Warrior> troops = opponent.getArmy().getTroops();
+        List<Warrior> unitsBehind = opponent.getArmy().getUnitsBehind(opponent, UNITS_TO_HIT);
 
-        int enemiesBehind = troops.indexOf(opponent) + UNITS_TO_HIT;
-
-        if (enemiesBehind < troops.size()) {
-            Warrior nextWarrior = troops.get(enemiesBehind);
-            int percentages = 100;
-            int attack = damage * getAdditionalDamage() / percentages;
-            nextWarrior.receiveDamage(attack);
+        if (unitsBehind != null) {
+            unitsBehind.forEach(w -> {
+                int healthAfterAttacked = opponent.getHealth();
+                int damageNext = healthBeforeAttacked - healthAfterAttacked;
+                int percentages = 100;
+                int attack = damageNext * getAdditionalDamage() / percentages;
+                w.receiveDamage(attack);
+            });
         }
     }
 }

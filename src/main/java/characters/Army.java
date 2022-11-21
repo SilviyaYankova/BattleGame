@@ -19,7 +19,14 @@ public class Army {
         for (int i = 0; i < quantity; i++) {
             troops.add(factory.get());
         }
+        setArmyToTheWarriors(this);
         return this;
+    }
+
+    private void setArmyToTheWarriors(Army army) {
+        for (Warrior warrior : troops) {
+            warrior.setArmy(army);
+        }
     }
 
     public void setArmyToWarrior(Army army, Warrior warrior) {
@@ -33,6 +40,18 @@ public class Army {
 
     public Iterator<Warrior> fistsAliveIterator() {
         return new FirstAliveIterator();
+    }
+
+    public List<Warrior> getUnitsBehind(Warrior opponent, int unitsToHit) {
+        List<Warrior> troops = opponent.getArmy().getTroops();
+
+        int enemiesBehind = troops.indexOf(opponent) + unitsToHit;
+
+        if (enemiesBehind < troops.size()) {
+            return List.of(troops.get(enemiesBehind));
+        }
+
+        return null;
     }
 
     class FirstAliveIterator implements Iterator<Warrior> {

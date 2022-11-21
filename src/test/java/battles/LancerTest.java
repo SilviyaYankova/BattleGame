@@ -45,6 +45,10 @@ public class LancerTest {
                           new Army().addUnits(Defender::new, 2)
                                     .addUnits(Knight::new, 1),
                           false),
+                arguments(new Army().addUnits(Lancer::new, 1),
+                          new Army().addUnits(Defender::new, 2)
+                                    .addUnits(Defender::new, 1),
+                          false),
 
 
                 arguments(new Army().addUnits(Warrior::new, 1)

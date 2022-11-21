@@ -39,11 +39,6 @@ public class Battle {
         var it1 = army1.fistsAliveIterator();
         var it2 = army2.fistsAliveIterator();
 
-        Warrior warrior1 = it1.next();
-        Warrior warrior2 = it2.next();
-        army1.setArmyToWarrior(army1, warrior1);
-        army2.setArmyToWarrior(army2, warrior2);
-
         while (it1.hasNext() && it2.hasNext()) {
             fight(it1.next(), it2.next());
         }
