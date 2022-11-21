@@ -1,17 +1,18 @@
 package characters;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.function.Supplier;
 
 public class Army {
 
-    protected Collection<Warrior> troops;
+    protected List<Warrior> troops;
 
     public Army() {
         this.troops = new ArrayList<>();
+    }
+
+    public List<Warrior> getTroops() {
+        return troops;
     }
 
     public Army addUnits(Supplier<Warrior> factory, int quantity) {
@@ -19,6 +20,10 @@ public class Army {
             troops.add(factory.get());
         }
         return this;
+    }
+
+    public void setArmyToWarrior(Army army, Warrior warrior) {
+        warrior.setArmy(army);
     }
 
     @Override

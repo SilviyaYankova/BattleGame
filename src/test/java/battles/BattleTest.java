@@ -135,6 +135,8 @@ class BattleTest {
                 arguments(new Army().addUnits(Knight::new, 3),
                           new Army().addUnits(Warrior::new, 3),
                           true),
+
+
                 arguments(new Army().addUnits(Defender::new, 2)
                                     .addUnits(Vampire::new, 2)
                                     .addUnits(Warrior::new, 1),

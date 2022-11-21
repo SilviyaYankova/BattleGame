@@ -4,6 +4,7 @@ public class Warrior {
     private static final int ATTACK = 5;
     private int health;
     private final int initialHealth;
+    private Army army;
 
     public Warrior() {
         this(50);
@@ -12,6 +13,11 @@ public class Warrior {
     protected Warrior(int health) {
         this.initialHealth = health;
         this.health = health;
+        this.army = new Army();
+    }
+
+    public int getAttack() {
+        return ATTACK;
     }
 
     public int getHealth() {
@@ -26,12 +32,21 @@ public class Warrior {
         setHealth(getHealth() + healPoints);
     }
 
-    public int getAttack() {
-        return ATTACK;
+    public boolean isAlive() {
+        return getHealth() > 0;
     }
 
-    public boolean isAlive() {
-        return this.getHealth() > 0;
+    public Army getArmy() {
+        return army;
+    }
+
+    public void setArmy(Army army) {
+        this.army = army;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " {health = " + health + "}";
     }
 
     public void hit(Warrior opponent) {
@@ -40,10 +55,5 @@ public class Warrior {
 
     protected void receiveDamage(int attack) {
         setHealth(health - attack);
-    }
-
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + " {health = " + health + "}";
     }
 }

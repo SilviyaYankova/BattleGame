@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Initial commit of the branch.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Fixing implementation of Vampire hit method using polymorphism.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/characters/Lancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/battles/LancerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Defender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Defender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battles/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Army.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/demos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demos/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/characters/Rookie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/characters/Rookie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +53,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/theme-oldirony.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/desktop" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -105,22 +108,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.testThreeWarriorFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="battles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
-      <option name="METHOD_NAME" value="testThreeWarriorFight(characters.Warrior,characters.Warrior,characters.Warrior,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BattleTest.testTwoWarriorFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
@@ -137,7 +124,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.testWarriorsHealth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LancerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
@@ -146,8 +133,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
-      <option name="METHOD_NAME" value="testWarriorsHealth(characters.Warrior,characters.Warrior,int)" />
+      <option name="MAIN_CLASS_NAME" value="battles.LancerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LancerTest.testArmiesFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gamewarriorandknight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="battles.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="battles" />
+      <option name="MAIN_CLASS_NAME" value="battles.LancerTest" />
+      <option name="METHOD_NAME" value="testArmiesFight(characters.Army,characters.Army,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,10 +158,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BattleTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.BattleTest.testThreeWarriorFight" />
-        <item itemvalue="JUnit.BattleTest.testWarriorsHealth" />
+        <item itemvalue="JUnit.LancerTest" />
         <item itemvalue="JUnit.BattleTest.testTwoWarriorFight" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.LancerTest.testArmiesFight" />
       </list>
     </recent_temporary>
   </component>
@@ -188,6 +190,12 @@
       <workItem from="1668628145393" duration="1581000" />
       <workItem from="1668670452892" duration="12546000" />
       <workItem from="1668749645921" duration="7349000" />
+      <workItem from="1668797213131" duration="7707000" />
+      <workItem from="1668928241129" duration="14697000" />
+      <workItem from="1668959538058" duration="17202000" />
+      <workItem from="1669019780297" duration="97000" />
+      <workItem from="1669030941782" duration="58000" />
+      <workItem from="1669031317914" duration="2872000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -375,6 +383,53 @@
     <MESSAGE value="Implemented Vampire class and tests." />
     <MESSAGE value="Initial commit of the branch." />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit of the branch." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="40" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/demos/Main.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/battles/LancerTest.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/battles/Battle.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="characters.Army" memberName="troops" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="this" />
+        <watch expression="opponent" />
+        <watch expression="nextWarrior" />
+        <watch expression="army1.troops.get(0)" />
+        <watch expression="army2.troops.get(0)" />
+        <watch expression="army2.troops.get(1)" />
+      </configuration>
+      <configuration name="Application">
+        <watch expression="army1.troops.get(0)" />
+        <watch expression="army2.troops.get(0)" />
+        <watch expression="army2.troops.get(1)" />
+        <watch expression="this" />
+        <watch expression="opponent" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
