@@ -3,8 +3,6 @@ package battles;
 import characters.Army;
 import characters.Warrior;
 
-import java.util.Iterator;
-
 public class Battle {
 
     /**

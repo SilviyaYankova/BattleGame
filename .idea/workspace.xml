@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Implementing Lancer.">
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Changing implementation of hit() in Lancer.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/battles/DefenderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/battles/Duel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/battles/VampireTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/battles/WarriorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battles/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Army.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Lancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/characters/Lancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demos/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/battles/LancerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/LancerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,21 +78,8 @@
       <recent name="battles" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LancerTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demos.Main" />
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="demos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BattleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.VampireTest">
+    <configuration name="DefenderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
@@ -99,13 +88,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
+      <option name="MAIN_CLASS_NAME" value="battles.DefenderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattleTest.testTwoWarriorFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Duel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
@@ -114,23 +103,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.BattleTest" />
-      <option name="METHOD_NAME" value="testTwoWarriorFight(characters.Warrior,characters.Warrior,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LancerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="battles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.LancerTest" />
+      <option name="MAIN_CLASS_NAME" value="battles.Duel" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,13 +125,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VampireTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gamewarriorandknight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="battles.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="battles" />
+      <option name="MAIN_CLASS_NAME" value="battles.VampireTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WarriorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gamewarriorandknight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="battles.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="battles" />
+      <option name="MAIN_CLASS_NAME" value="battles.WarriorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LancerTest" />
-        <item itemvalue="JUnit.BattleTest.testTwoWarriorFight" />
+        <item itemvalue="JUnit.VampireTest" />
+        <item itemvalue="JUnit.DefenderTest" />
+        <item itemvalue="JUnit.WarriorTest" />
+        <item itemvalue="JUnit.Duel" />
         <item itemvalue="JUnit.LancerTest.testArmiesFight" />
-        <item itemvalue="JUnit.BattleTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +197,7 @@
       <workItem from="1669030941782" duration="58000" />
       <workItem from="1669031317914" duration="3101000" />
       <workItem from="1669043497781" duration="6747000" />
-      <workItem from="1669054154874" duration="1003000" />
+      <workItem from="1669054154874" duration="2611000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -343,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669035720515</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Changing implementation of hit() in Lancer.">
+      <created>1669057340800</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1669057340800</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +399,8 @@
     <MESSAGE value="Implemented Vampire class and tests." />
     <MESSAGE value="Initial commit of the branch." />
     <MESSAGE value="Implementing Lancer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Lancer." />
+    <MESSAGE value="Changing implementation of hit() in Lancer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing implementation of hit() in Lancer." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
