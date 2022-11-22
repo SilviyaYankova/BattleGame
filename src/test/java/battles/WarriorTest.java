@@ -1,6 +1,8 @@
 package battles;
 
-import characters.*;
+import org.example.battles.Battle;
+import org.example.characters.Army;
+import org.example.characters.WarriorImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -25,23 +27,23 @@ public class WarriorTest {
     public static List<Arguments> testArmiesFight() {
 
         return List.of(
-                arguments(new Army().addUnits(Warrior::new, 1),
-                          new Army().addUnits(Warrior::new, 2),
+                arguments(new Army().addUnits(WarriorImpl::new, 1),
+                          new Army().addUnits(WarriorImpl::new, 2),
                           false),
-                arguments(new Army().addUnits(Warrior::new, 2),
-                          new Army().addUnits(Warrior::new, 3),
+                arguments(new Army().addUnits(WarriorImpl::new, 2),
+                          new Army().addUnits(WarriorImpl::new, 3),
                           false),
-                arguments(new Army().addUnits(Warrior::new, 5),
-                          new Army().addUnits(Warrior::new, 7),
+                arguments(new Army().addUnits(WarriorImpl::new, 5),
+                          new Army().addUnits(WarriorImpl::new, 7),
                           false),
-                arguments(new Army().addUnits(Warrior::new, 20),
-                          new Army().addUnits(Warrior::new, 11),
+                arguments(new Army().addUnits(WarriorImpl::new, 20),
+                          new Army().addUnits(WarriorImpl::new, 11),
                           true),
-                arguments(new Army().addUnits(Warrior::new, 10),
-                          new Army().addUnits(Warrior::new, 11),
+                arguments(new Army().addUnits(WarriorImpl::new, 10),
+                          new Army().addUnits(WarriorImpl::new, 11),
                           true),
-                arguments(new Army().addUnits(Warrior::new, 11),
-                          new Army().addUnits(Warrior::new, 7),
+                arguments(new Army().addUnits(WarriorImpl::new, 11),
+                          new Army().addUnits(WarriorImpl::new, 7),
                           true)
         );
     }

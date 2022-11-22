@@ -1,6 +1,11 @@
 package battles;
 
 import characters.*;
+import org.example.battles.Battle;
+import org.example.characters.Defender;
+import org.example.characters.Knight;
+import org.example.characters.Vampire;
+import org.example.characters.WarriorImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -15,7 +20,7 @@ public class Duel {
     @DisplayName("Two warriors fight")
     @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
     @MethodSource("testTwoWarriorFight")
-    void testTwoWarriorFight(Warrior warrior1, Warrior warrior2, boolean expected) {
+    void testTwoWarriorFight(WarriorImpl warrior1, WarriorImpl warrior2, boolean expected) {
 
         var test = Battle.fight(warrior1, warrior2);
 
@@ -24,23 +29,23 @@ public class Duel {
 
     public static List<Arguments> testTwoWarriorFight() {
         return List.of(
-                arguments(new Warrior(), new Knight(), false),
-                arguments(new Knight(), new Warrior(), true),
-                arguments(new Warrior(), new Warrior(), true),
+                arguments(new WarriorImpl(), new Knight(), false),
+                arguments(new Knight(), new WarriorImpl(), true),
+                arguments(new WarriorImpl(), new WarriorImpl(), true),
                 arguments(new Knight(), new Knight(), true),
-                arguments(new Warrior(), new Warrior(), true),
-                arguments(new Warrior(), new Knight(), false),
+                arguments(new WarriorImpl(), new WarriorImpl(), true),
+                arguments(new WarriorImpl(), new Knight(), false),
                 arguments(new Defender(), new Rookie(), true),
                 arguments(new Defender(), new Vampire(), true),
                 arguments(new Vampire(), new Defender(), false),
-                arguments(new Warrior(), new Vampire(), true)
+                arguments(new WarriorImpl(), new Vampire(), true)
         );
     }
 
     @DisplayName("Three warriors fight")
     @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
     @MethodSource("testThreeWarriorFight")
-    void testThreeWarriorFight(Warrior warrior1, Warrior warrior2, Warrior warrior3, boolean expected) {
+    void testThreeWarriorFight(WarriorImpl warrior1, WarriorImpl warrior2, WarriorImpl warrior3, boolean expected) {
 
         Battle.fight(warrior1, warrior2);
         var test = Battle.fight(warrior2, warrior3);
@@ -50,8 +55,8 @@ public class Duel {
 
     public static List<Arguments> testThreeWarriorFight() {
         return List.of(
-                arguments(new Warrior(), new Knight(), new Warrior(), false),
-                arguments(new Defender(), new Rookie(), new Warrior(), false)
+                arguments(new WarriorImpl(), new Knight(), new WarriorImpl(), false),
+                arguments(new Defender(), new Rookie(), new WarriorImpl(), false)
         );
     }
 }

@@ -1,6 +1,10 @@
 package battles;
 
-import characters.*;
+import org.example.battles.Battle;
+import org.example.characters.Army;
+import org.example.characters.Defender;
+import org.example.characters.Vampire;
+import org.example.characters.WarriorImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -28,54 +32,54 @@ public class VampireTest {
                 arguments(new Army()
                                   .addUnits(Defender::new, 2)
                                   .addUnits(Vampire::new, 2)
-                                  .addUnits(Warrior::new, 1),
+                                  .addUnits(WarriorImpl::new, 1),
                           new Army()
-                                  .addUnits(Warrior::new, 2)
+                                  .addUnits(WarriorImpl::new, 2)
                                   .addUnits(Defender::new, 2)
                                   .addUnits(Vampire::new, 3),
                           false),
                 arguments(new Army()
                                   .addUnits(Defender::new, 5)
                                   .addUnits(Vampire::new, 6)
-                                  .addUnits(Warrior::new, 7),
+                                  .addUnits(WarriorImpl::new, 7),
                           new Army()
-                                  .addUnits(Warrior::new, 6)
+                                  .addUnits(WarriorImpl::new, 6)
                                   .addUnits(Defender::new, 6)
                                   .addUnits(Vampire::new, 6),
                           false),
                 arguments(new Army()
                                   .addUnits(Defender::new, 2)
                                   .addUnits(Vampire::new, 3)
-                                  .addUnits(Warrior::new, 4),
+                                  .addUnits(WarriorImpl::new, 4),
                           new Army()
-                                  .addUnits(Warrior::new, 4)
+                                  .addUnits(WarriorImpl::new, 4)
                                   .addUnits(Defender::new, 4)
                                   .addUnits(Vampire::new, 3),
                           false),
                 arguments(new Army()
                                   .addUnits(Defender::new, 11)
                                   .addUnits(Vampire::new, 3)
-                                  .addUnits(Warrior::new, 4),
+                                  .addUnits(WarriorImpl::new, 4),
                           new Army()
-                                  .addUnits(Warrior::new, 4)
+                                  .addUnits(WarriorImpl::new, 4)
                                   .addUnits(Defender::new, 4)
                                   .addUnits(Vampire::new, 13),
                           true),
                 arguments(new Army()
                                   .addUnits(Defender::new, 9)
                                   .addUnits(Vampire::new, 3)
-                                  .addUnits(Warrior::new, 8),
+                                  .addUnits(WarriorImpl::new, 8),
                           new Army()
-                                  .addUnits(Warrior::new, 4)
+                                  .addUnits(WarriorImpl::new, 4)
                                   .addUnits(Defender::new, 4)
                                   .addUnits(Vampire::new, 13),
                           true),
                 arguments(new Army()
                                   .addUnits(Vampire::new, 1)
-                                  .addUnits(Warrior::new, 4),
+                                  .addUnits(WarriorImpl::new, 4),
                           new Army()
                                   .addUnits(Vampire::new, 3)
-                                  .addUnits(Warrior::new, 2),
+                                  .addUnits(WarriorImpl::new, 2),
                           true)
 
         );

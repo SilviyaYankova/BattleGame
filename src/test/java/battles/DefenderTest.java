@@ -1,6 +1,11 @@
 package battles;
 
 import characters.*;
+import org.example.battles.Battle;
+import org.example.characters.Army;
+import org.example.characters.Defender;
+import org.example.characters.Knight;
+import org.example.characters.WarriorImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -16,7 +21,7 @@ public class DefenderTest {
     @DisplayName("Warrior's health")
     @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
     @MethodSource("testWarriorHealth")
-    void testWarriorsHealth(Warrior warrior1, Warrior warrior2, int health) {
+    void testWarriorsHealth(WarriorImpl warrior1, WarriorImpl warrior2, int health) {
 
         Battle.fight(warrior2, warrior2);
 
@@ -44,21 +49,21 @@ public class DefenderTest {
 
         return List.of(
                 arguments(new Army()
-                                  .addUnits(Warrior::new, 5)
+                                  .addUnits(WarriorImpl::new, 5)
                                   .addUnits(Defender::new, 4)
                                   .addUnits(Defender::new, 5),
                           new Army()
-                                  .addUnits(Warrior::new, 4),
+                                  .addUnits(WarriorImpl::new, 4),
                           true),
                 arguments(new Army()
                                   .addUnits(Defender::new, 5)
-                                  .addUnits(Warrior::new, 20)
+                                  .addUnits(WarriorImpl::new, 20)
                                   .addUnits(Defender::new, 4),
                           new Army()
-                                  .addUnits(Warrior::new, 21),
+                                  .addUnits(WarriorImpl::new, 21),
                           true),
                 arguments(new Army()
-                                  .addUnits(Warrior::new, 10)
+                                  .addUnits(WarriorImpl::new, 10)
                                   .addUnits(Defender::new, 5)
                                   .addUnits(Defender::new, 10),
                           new Army()
@@ -66,21 +71,21 @@ public class DefenderTest {
                           true),
                 arguments(new Army()
                                   .addUnits(Defender::new, 2)
-                                  .addUnits(Warrior::new, 1)
+                                  .addUnits(WarriorImpl::new, 1)
                                   .addUnits(Defender::new, 1),
                           new Army()
-                                  .addUnits(Warrior::new, 5),
+                                  .addUnits(WarriorImpl::new, 5),
                           false),
                 arguments(new Army()
-                                  .addUnits(Warrior::new, 10)
+                                  .addUnits(WarriorImpl::new, 10)
                                   .addUnits(Knight::new, 5),
                           new Army()
-                                  .addUnits(Warrior::new, 30),
+                                  .addUnits(WarriorImpl::new, 30),
                           false),
                 arguments(new Army()
                                   .addUnits(Knight::new, 3),
                           new Army()
-                                  .addUnits(Warrior::new, 3),
+                                  .addUnits(WarriorImpl::new, 3),
                           true)
         );
     }

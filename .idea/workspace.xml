@@ -4,15 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Changing implementation of hit() in Lancer.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/battles/DefenderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/battles/Duel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/battles/VampireTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/battles/WarriorTest.java" afterDir="false" />
+    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Changing structure of tests.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/HasWarriorBehind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battles/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/BattleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Army.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Defender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Defender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Lancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Lancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Vampire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/WarriorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demos/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/battles/DefenderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/DefenderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/battles/Duel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/Duel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/battles/LancerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/LancerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/battles/VampireTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/VampireTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/battles/WarriorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/WarriorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/characters/Rookie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/characters/Rookie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +88,7 @@
       <recent name="battles" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.VampireTest">
+  <component name="RunManager" selected="JUnit.WarriorTest">
     <configuration name="DefenderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
@@ -109,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LancerTest.testArmiesFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LancerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
@@ -119,8 +129,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="battles" />
       <option name="MAIN_CLASS_NAME" value="battles.LancerTest" />
-      <option name="METHOD_NAME" value="testArmiesFight(characters.Army,characters.Army,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VampireTest" />
-        <item itemvalue="JUnit.DefenderTest" />
         <item itemvalue="JUnit.WarriorTest" />
+        <item itemvalue="JUnit.VampireTest" />
+        <item itemvalue="JUnit.LancerTest" />
         <item itemvalue="JUnit.Duel" />
-        <item itemvalue="JUnit.LancerTest.testArmiesFight" />
+        <item itemvalue="JUnit.DefenderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +206,9 @@
       <workItem from="1669030941782" duration="58000" />
       <workItem from="1669031317914" duration="3101000" />
       <workItem from="1669043497781" duration="6747000" />
-      <workItem from="1669054154874" duration="2611000" />
+      <workItem from="1669054154874" duration="3885000" />
+      <workItem from="1669060230413" duration="14000" />
+      <workItem from="1669102451468" duration="13114000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1668100650642</created>
@@ -353,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669057340800</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Changing structure of tests.">
+      <created>1669059203890</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1669059203890</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +418,8 @@
     <MESSAGE value="Initial commit of the branch." />
     <MESSAGE value="Implementing Lancer." />
     <MESSAGE value="Changing implementation of hit() in Lancer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing implementation of hit() in Lancer." />
+    <MESSAGE value="Changing structure of tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing structure of tests." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -409,13 +428,18 @@
           <properties class="java.util.NoSuchElementException" package="java.util" />
           <option name="timeStamp" value="40" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/demos/Main.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/battles/LancerTest.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="characters.Army" memberName="troops" />
-      </pinned-members>
-    </pin-to-top-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="this" />
@@ -425,6 +449,9 @@
         <watch expression="army2.troops.get(0)" />
         <watch expression="army2.troops.get(1)" />
       </configuration>
+      <configuration name="Application">
+        <watch expression="troops" language="JAVA" />
+      </configuration>
     </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -432,6 +459,9 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gamewarriorandknight$Main.ic" NAME="Main Coverage Results" MODIFIED="1669116009615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>demos.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/gamewarriorandknight$BattleTest_whenWarriorFightsAgainstWarriorExpectFirstWarriorWins.ic" NAME="BattleTest.whenWarriorFightsAgainstWarriorExpectFirstWarriorWins Coverage Results" MODIFIED="1668491584474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>characters.*</FILTER>
     </SUITE>

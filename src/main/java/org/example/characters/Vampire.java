@@ -1,6 +1,8 @@
-package characters;
+package org.example.characters;
 
-public class Vampire extends Warrior {
+import org.example.interfaces.Warrior;
+
+public class Vampire extends WarriorImpl {
 
     private static final int ATTACK = 4;
     private static final int VAMPIRISM = 50;

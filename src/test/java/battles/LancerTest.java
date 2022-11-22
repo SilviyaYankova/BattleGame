@@ -1,7 +1,7 @@
 package battles;
 
-import characters.*;
-import characters.Warrior;
+import org.example.battles.Battle;
+import org.example.characters.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -30,18 +30,18 @@ public class LancerTest {
                 arguments(new Army()
                                   .addUnits(Lancer::new, 1),
                           new Army()
-                                  .addUnits(Warrior::new, 1),
+                                  .addUnits(WarriorImpl::new, 1),
                           true),
                 arguments(new Army()
                                   .addUnits(Lancer::new, 1),
                           new Army()
-                                  .addUnits(Warrior::new, 1)
+                                  .addUnits(WarriorImpl::new, 1)
                                   .addUnits(Knight::new, 1),
                           false),
                 arguments(new Army()
                                   .addUnits(Lancer::new, 1),
                           new Army()
-                                  .addUnits(Warrior::new, 1)
+                                  .addUnits(WarriorImpl::new, 1)
                                   .addUnits(Defender::new, 1),
                           false),
                 arguments(new Army()
@@ -65,21 +65,21 @@ public class LancerTest {
 
 
                 arguments(new Army()
-                                  .addUnits(Warrior::new, 1)
+                                  .addUnits(WarriorImpl::new, 1)
                                   .addUnits(Lancer::new, 1)
                                   .addUnits(Defender::new, 2),
                           new Army()
                                   .addUnits(Vampire::new, 3)
-                                  .addUnits(Warrior::new, 1)
+                                  .addUnits(WarriorImpl::new, 1)
                                   .addUnits(Lancer::new, 12),
                           false),
                 arguments(new Army()
                                   .addUnits(Lancer::new, 5)
                                   .addUnits(Vampire::new, 3)
-                                  .addUnits(Warrior::new, 4)
+                                  .addUnits(WarriorImpl::new, 4)
                                   .addUnits(Defender::new, 2),
                           new Army()
-                                  .addUnits(Warrior::new, 4)
+                                  .addUnits(WarriorImpl::new, 4)
                                   .addUnits(Defender::new, 4)
                                   .addUnits(Vampire::new, 6)
                                   .addUnits(Lancer::new, 5),
@@ -87,19 +87,19 @@ public class LancerTest {
                 arguments(new Army()
                                   .addUnits(Lancer::new, 7)
                                   .addUnits(Vampire::new, 3)
-                                  .addUnits(Warrior::new, 4)
+                                  .addUnits(WarriorImpl::new, 4)
                                   .addUnits(Defender::new, 2),
                           new Army()
-                                  .addUnits(Warrior::new, 4)
+                                  .addUnits(WarriorImpl::new, 4)
                                   .addUnits(Defender::new, 4)
                                   .addUnits(Vampire::new, 6)
                                   .addUnits(Lancer::new, 4),
                           true),
                 arguments(new Army()
-                                  .addUnits(Warrior::new, 2),
+                                  .addUnits(WarriorImpl::new, 2),
                           new Army()
                                   .addUnits(Lancer::new, 1)
-                                  .addUnits(Warrior::new, 1),
+                                  .addUnits(WarriorImpl::new, 1),
                           false)
 
         );
