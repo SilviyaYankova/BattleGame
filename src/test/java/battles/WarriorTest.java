@@ -2,6 +2,7 @@ package battles;
 
 import org.example.battles.Battle;
 import org.example.characters.Army;
+import org.example.characters.Vampire;
 import org.example.characters.WarriorImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,4 @@
-package org.example.interfaces;
+package org.example.characters;
 
 public interface Warrior {
     int getAttack();
@@ -12,4 +12,8 @@ public interface Warrior {
     void hit(Warrior opponent);
 
     void receiveDamage(int attack);
+
+    void healBy(int healPoints);
+
+    void heal(Warrior opponent);
 }

@@ -7,4 +7,9 @@ public class Knight extends WarriorImpl {
     public int getAttack() {
         return ATTACK;
     }
+
+    @Override
+    public void hit(Warrior opponent) {
+        super.hit(opponent);
+    }
 }
