@@ -1,6 +1,6 @@
-package characters;
+package org.example.characters;
 
-public class Defender extends Warrior {
+public class Defender extends WarriorImpl {
     private static final int ATTACK = 3;
     private static final int DEFENSE = 2;
 
@@ -18,7 +18,7 @@ public class Defender extends Warrior {
     }
 
     @Override
-    protected void receiveDamage(int attack) {
+    public void receiveDamage(int attack) {
         if (attack > getDefense()) {
             super.receiveDamage(Math.max(0, attack - getDefense()));
         }

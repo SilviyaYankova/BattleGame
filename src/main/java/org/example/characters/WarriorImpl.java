@@ -1,19 +1,27 @@
-package characters;
+package org.example.characters;
 
-public class Warrior {
+import org.example.interfaces.Warrior;
+
+public class WarriorImpl implements Warrior {
     private static final int ATTACK = 5;
     private int health;
     private final int initialHealth;
 
-    public Warrior() {
+    public WarriorImpl() {
         this(50);
     }
 
-    protected Warrior(int health) {
+    protected WarriorImpl(int health) {
         this.initialHealth = health;
         this.health = health;
     }
 
+    @Override
+    public int getAttack() {
+        return ATTACK;
+    }
+
+    @Override
     public int getHealth() {
         return health;
     }
@@ -26,19 +34,13 @@ public class Warrior {
         setHealth(getHealth() + healPoints);
     }
 
-    public int getAttack() {
-        return ATTACK;
-    }
-
-    public boolean isAlive() {
-        return this.getHealth() > 0;
-    }
-
+    @Override
     public void hit(Warrior opponent) {
         opponent.receiveDamage(getAttack());
     }
 
-    protected void receiveDamage(int attack) {
+    @Override
+    public void receiveDamage(int attack) {
         setHealth(health - attack);
     }
 
