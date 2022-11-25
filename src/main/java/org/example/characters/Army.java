@@ -1,14 +1,14 @@
 package org.example.characters;
 
 
-import org.example.decorators.WarriorInArmyDecoratorImpl;
+import org.example.decorators.WarriorInArmy;
 
 import java.util.*;
 import java.util.function.Supplier;
 
 public class Army {
     protected List<Warrior> troops;
-    private WarriorInArmyDecoratorImpl tail;
+    private WarriorInArmy tail;
 
     public Army() {
         this.troops = new ArrayList<>();
@@ -17,7 +17,7 @@ public class Army {
     public Army addUnits(Supplier<Warrior> factory, int quantity) {
         for (int i = 0; i < quantity; i++) {
             Warrior warrior = factory.get();
-            WarriorInArmyDecoratorImpl wrapped = new WarriorInArmyDecoratorImpl(warrior);
+            WarriorInArmy wrapped = new WarriorInArmy(warrior);
 
             if (tail != null) {
                 tail.setNextWarrior(wrapped);

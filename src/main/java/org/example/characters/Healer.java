@@ -1,6 +1,11 @@
 package org.example.characters;
 
-public class Healer extends WarriorImpl {
+import org.example.commands.CanProcessCommand;
+import org.example.commands.ChampionHitCommand;
+import org.example.commands.Command;
+import org.example.decorators.WarriorInArmy;
+
+public class Healer extends WarriorImpl implements CanProcessCommand {
     private static final int ATTACK = 0;
     private static final int HEAL_POWER = 2;
 
@@ -18,7 +23,15 @@ public class Healer extends WarriorImpl {
     }
 
     @Override
-    public void heal(Warrior warrior) {
-        warrior.healBy(getHealPower());
+    public void processCommand(Command  command, WarriorInArmy sender) {
+        if (command instanceof ChampionHitCommand) {
+            heal(sender);
+        }
+    }
+
+    private void heal(Warrior warrior) {
+        if (warrior instanceof WarriorInArmy w) {
+            w.healBy(getHealPower());
+        }
     }
 }

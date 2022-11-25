@@ -1,6 +1,6 @@
 package org.example.characters;
 
-import org.example.decorators.WarriorInArmyDecorator;
+import org.example.decorators.HasWarriorBehind;
 
 public class Lancer extends WarriorImpl {
     private static final int ATTACK = 6;
@@ -20,7 +20,7 @@ public class Lancer extends WarriorImpl {
         int healthBeforeAttacked = opponent.getHealth();
         super.hit(opponent);
 
-        if (opponent instanceof WarriorInArmyDecorator opponentWithNext) {
+        if (opponent instanceof HasWarriorBehind opponentWithNext) {
             Warrior nextWarrior = opponentWithNext.getWarriorBehind();
             if (nextWarrior != null) {
                 int healthAfterAttacked = opponent.getHealth();

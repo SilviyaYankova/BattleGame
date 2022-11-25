@@ -40,11 +40,6 @@ public class WarriorImpl implements Warrior {
     }
 
     @Override
-    public void heal(Warrior warrior) {
-        warrior.healBy(0);
-    }
-
-    @Override
     public void hit(Warrior opponent) {
         opponent.receiveDamage(getAttack());
     }

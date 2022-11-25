@@ -14,6 +14,4 @@ public interface Warrior {
     void receiveDamage(int attack);
 
     void healBy(int healPoints);
-
-    void heal(Warrior opponent);
 }
