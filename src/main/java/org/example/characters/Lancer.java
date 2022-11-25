@@ -1,12 +1,10 @@
 package org.example.characters;
 
-import org.example.interfaces.HasWarriorBehind;
-import org.example.interfaces.Warrior;
+import org.example.decorators.HasWarriorBehind;
 
 public class Lancer extends WarriorImpl {
     private static final int ATTACK = 6;
     private static final int ADDITIONAL_DAMAGE = 50;
-    private static final int UNITS_TO_HIT = 1;
 
     @Override
     public int getAttack() {

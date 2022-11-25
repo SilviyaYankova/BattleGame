@@ -1,53 +1,14 @@
 package org.example.characters;
 
-import org.example.interfaces.HasWarriorBehind;
-import org.example.interfaces.Warrior;
+
+import org.example.decorators.WarriorInArmy;
 
 import java.util.*;
 import java.util.function.Supplier;
 
 public class Army {
     protected List<Warrior> troops;
-    private WarriorInArmyDecorator tail;
-
-    static class WarriorInArmyDecorator implements Warrior, HasWarriorBehind {
-        Warrior warrior;
-        Warrior nextWarrior;
-
-        public WarriorInArmyDecorator(Warrior warrior) {
-            this.warrior = warrior;
-        }
-
-        private void setNextWarrior(Warrior nextWarrior) {
-            this.nextWarrior = nextWarrior;
-        }
-
-        @Override
-        public Warrior getWarriorBehind() {
-            return nextWarrior;
-        }
-
-        @Override
-        public int getAttack() {
-            return warrior.getAttack();
-        }
-
-        @Override
-        public int getHealth() {
-            return warrior.getHealth();
-        }
-
-        @Override
-        public void hit(Warrior opponent) {
-            warrior.hit(opponent);
-        }
-
-        @Override
-        public void receiveDamage(int attack) {
-            warrior.receiveDamage(attack);
-        }
-    }
-
+    private WarriorInArmy tail;
 
     public Army() {
         this.troops = new ArrayList<>();
@@ -56,7 +17,7 @@ public class Army {
     public Army addUnits(Supplier<Warrior> factory, int quantity) {
         for (int i = 0; i < quantity; i++) {
             Warrior warrior = factory.get();
-            WarriorInArmyDecorator wrapped = new WarriorInArmyDecorator(warrior);
+            WarriorInArmy wrapped = new WarriorInArmy(warrior);
 
             if (tail != null) {
                 tail.setNextWarrior(wrapped);

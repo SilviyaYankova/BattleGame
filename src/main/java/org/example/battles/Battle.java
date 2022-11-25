@@ -1,7 +1,7 @@
 package org.example.battles;
 
 import org.example.characters.Army;
-import org.example.interfaces.Warrior;
+import org.example.characters.Warrior;
 
 public class Battle {
 

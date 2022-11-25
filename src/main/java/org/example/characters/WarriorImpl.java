@@ -1,11 +1,10 @@
 package org.example.characters;
 
-import org.example.interfaces.Warrior;
-
 public class WarriorImpl implements Warrior {
     private static final int ATTACK = 5;
     private int health;
     private final int initialHealth;
+    Warrior warrior;
 
     public WarriorImpl() {
         this(50);
@@ -14,6 +13,11 @@ public class WarriorImpl implements Warrior {
     protected WarriorImpl(int health) {
         this.initialHealth = health;
         this.health = health;
+    }
+
+    public WarriorImpl(Warrior warrior) {
+        this(50);
+        this.warrior = warrior;
     }
 
     @Override
@@ -30,7 +34,8 @@ public class WarriorImpl implements Warrior {
         this.health = Math.min(initialHealth, health);
     }
 
-    protected void healBy(int healPoints) {
+    @Override
+    public void healBy(int healPoints) {
         setHealth(getHealth() + healPoints);
     }
 
@@ -41,7 +46,9 @@ public class WarriorImpl implements Warrior {
 
     @Override
     public void receiveDamage(int attack) {
+        if (attack > 0) {
         setHealth(health - attack);
+        }
     }
 
     @Override

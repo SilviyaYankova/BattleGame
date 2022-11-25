@@ -1,7 +1,5 @@
 package org.example.characters;
 
-import org.example.interfaces.Warrior;
-
 public class Vampire extends WarriorImpl {
 
     private static final int ATTACK = 4;
