@@ -1,7 +1,13 @@
 package org.example.battles;
 
 import org.example.characters.Army;
+import org.example.characters.Lancer;
 import org.example.characters.Warrior;
+import org.example.characters.WarriorImpl;
+import org.example.decorators.WarriorInArmy;
+
+import java.util.Iterator;
+import java.util.List;
 
 public class Battle {
 
@@ -42,5 +48,32 @@ public class Battle {
         }
 
         return it1.hasNext();
+    }
+
+    public static boolean straightFight(Army army1, Army army2) {
+        int count = 1;
+        while (true) {
+            Iterator<WarriorInArmy> it1 = army1.nextAliveIterator();
+            Iterator<WarriorInArmy> it2 = army2.nextAliveIterator();
+            System.out.println("Round: " + count);
+
+            boolean first = it1.hasNext();
+            boolean second = it2.hasNext();
+
+            if (!first) return false;
+            if (!second) return false;
+
+            while (first && second) {
+                Warrior warrior1 = it1.next().getWarrior();
+                Warrior warrior2 = it2.next().getWarrior();
+                fight(warrior1, warrior2);
+                System.out.println(warrior1 + " -> " + warrior2);
+                first = it1.hasNext();
+                second = it2.hasNext();
+            }
+            count += 1;
+            System.out.println();
+
+        }
     }
 }

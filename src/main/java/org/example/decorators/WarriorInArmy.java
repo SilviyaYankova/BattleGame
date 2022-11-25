@@ -13,6 +13,15 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
         this.warrior = warrior;
     }
 
+    @Override
+    public Warrior getWarrior() {
+        return warrior;
+    }
+
+    public void setWarrior(Warrior warrior) {
+        this.warrior = warrior;
+    }
+
     public void setNextWarrior(WarriorInArmy nextWarrior) {
         this.nextWarrior = nextWarrior;
     }
@@ -30,6 +39,11 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
     @Override
     public int getHealth() {
         return warrior.getHealth();
+    }
+
+    @Override
+    public void setHealth(int health) {
+        warrior.setHealth(health);
     }
 
     @Override

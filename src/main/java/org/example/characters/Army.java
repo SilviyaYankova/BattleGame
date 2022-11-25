@@ -7,11 +7,19 @@ import java.util.*;
 import java.util.function.Supplier;
 
 public class Army {
-    protected List<Warrior> troops;
+    protected List<WarriorInArmy> troops;
     private WarriorInArmy tail;
 
     public Army() {
         this.troops = new ArrayList<>();
+    }
+
+    public List<WarriorInArmy> getTroops() {
+        return troops;
+    }
+
+    public void setTroops(List<WarriorInArmy> troops) {
+        this.troops = troops;
     }
 
     public Army addUnits(Supplier<Warrior> factory, int quantity) {
@@ -34,8 +42,8 @@ public class Army {
 
     class FirstAliveIterator implements Iterator<Warrior> {
 
-        Iterator<Warrior> iterator = troops.iterator();
-        Warrior champion;
+        Iterator<WarriorInArmy> iterator = troops.iterator();
+        WarriorInArmy champion;
 
         @Override
         public boolean hasNext() {
@@ -58,6 +66,31 @@ public class Army {
             return champion;
         }
     }
+
+    public Iterator<WarriorInArmy> nextAliveIterator() {
+        return new NextAliveIterator();
+    }
+
+    class NextAliveIterator implements Iterator<WarriorInArmy> {
+        Iterator<WarriorInArmy> iterator = troops.iterator();
+
+        WarriorInArmy nextAlive;
+
+        @Override
+        public boolean hasNext() {
+            while (iterator.hasNext()) {
+                nextAlive = iterator.next();
+                if (nextAlive.isAlive()) return true;
+            }
+            return false;
+        }
+
+        @Override
+        public WarriorInArmy next() {
+            return nextAlive;
+        }
+    }
+
 
     @Override
     public String toString() {
