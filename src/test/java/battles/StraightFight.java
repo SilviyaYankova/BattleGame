@@ -27,6 +27,7 @@ public class StraightFight {
     public static List<Arguments> testStraightFight() {
 
         return List.of(
+                // smoke 1
                 arguments(new Army()
                                   .addUnits(Defender::new, 2)
                                   .addUnits(Healer::new, 1)
@@ -42,7 +43,7 @@ public class StraightFight {
                                   .addUnits(Vampire::new, 3)
                                   .addUnits(Healer::new, 1),
                           false),
-
+                // smoke 2
                 arguments(new Army()
                                   .addUnits(WarriorImpl::new, 1)
                                   .addUnits(Lancer::new, 1)
@@ -53,8 +54,8 @@ public class StraightFight {
                                   .addUnits(WarriorImpl::new, 1)
                                   .addUnits(Healer::new, 1)
                                   .addUnits(Lancer::new, 2),
-                          true),
-
+                          false),
+                // smoke 3
                 arguments(new Army()
                                   .addUnits(WarriorImpl::new, 10),
                           new Army()
@@ -62,7 +63,7 @@ public class StraightFight {
                                   .addUnits(Lancer::new, 5),
                           false),
 
-                //
+                // 19.
                 arguments(new Army()
                                   .addUnits(Lancer::new, 5)
                                   .addUnits(Vampire::new, 3)
@@ -75,38 +76,41 @@ public class StraightFight {
                                   .addUnits(Lancer::new, 5),
                           false),
 
+                // 20.
+                arguments(
+                        new Army()
+                                .addUnits(Lancer::new, 7)
+                                .addUnits(Vampire::new, 3)
+                                .addUnits(WarriorImpl::new, 4)
+                                .addUnits(Defender::new, 2),
+                        new Army()
+                                .addUnits(WarriorImpl::new, 4)
+                                .addUnits(Defender::new, 4)
+                                .addUnits(Vampire::new, 6)
+                                .addUnits(Lancer::new, 4),
+                        true),
 
-                arguments(new Army()
-                                  .addUnits(Lancer::new, 7)
-                                  .addUnits(Vampire::new, 3)
-                                  .addUnits(WarriorImpl::new, 4)
-                                  .addUnits(Defender::new, 2),
-                          new Army()
-                                  .addUnits(WarriorImpl::new, 4)
-                                  .addUnits(Defender::new, 4)
-                                  .addUnits(Vampire::new, 6)
-                                  .addUnits(Lancer::new, 5),
-                          true),
+                // 21.
+                arguments(
+                        new Army()
+                                .addUnits(Lancer::new, 7)
+                                .addUnits(Vampire::new, 3)
+                                .addUnits(Healer::new, 1)
+                                .addUnits(WarriorImpl::new, 4)
+                                .addUnits(Healer::new, 1)
+                                .addUnits(Defender::new, 2),
+                        new Army()
+                                .addUnits(WarriorImpl::new, 4)
+                                .addUnits(Defender::new, 4)
+                                .addUnits(Healer::new, 1)
+                                .addUnits(Vampire::new, 6)
+                                .addUnits(Lancer::new, 4),
+                        false),
 
-                arguments(new Army()
-                                  .addUnits(Lancer::new, 7)
-                                  .addUnits(Vampire::new, 3)
-                                  .addUnits(Healer::new, 1)
-                                  .addUnits(WarriorImpl::new, 4)
-                                  .addUnits(Healer::new, 1)
-                                  .addUnits(Defender::new, 2),
-                          new Army()
-                                  .addUnits(WarriorImpl::new, 4)
-                                  .addUnits(Defender::new, 4)
-                                  .addUnits(Healer::new, 1)
-                                  .addUnits(Vampire::new, 6)
-                                  .addUnits(Lancer::new, 4),
-                          false),
-
-
+                // 22.
                 arguments(new Army()
                                   .addUnits(Lancer::new, 4)
-                                  .addUnits(Vampire::new, 3)
+                                  .addUnits(WarriorImpl::new, 3)
                                   .addUnits(Healer::new, 1)
                                   .addUnits(WarriorImpl::new, 4)
                                   .addUnits(Healer::new, 1)
@@ -118,7 +122,6 @@ public class StraightFight {
                                   .addUnits(Vampire::new, 2)
                                   .addUnits(Lancer::new, 4),
                           true)
-
         );
     }
 }

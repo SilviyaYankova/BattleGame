@@ -51,29 +51,25 @@ public class Battle {
     }
 
     public static boolean straightFight(Army army1, Army army2) {
-        int count = 1;
         while (true) {
-            Iterator<WarriorInArmy> it1 = army1.nextAliveIterator();
-            Iterator<WarriorInArmy> it2 = army2.nextAliveIterator();
-            System.out.println("Round: " + count);
+            Iterator<Warrior> it1 = army1.nextAliveIterator();
+            Iterator<Warrior> it2 = army2.nextAliveIterator();
 
             boolean first = it1.hasNext();
             boolean second = it2.hasNext();
 
             if (!first) return false;
-            if (!second) return false;
+            if (!second) return true;
 
             while (first && second) {
-                Warrior warrior1 = it1.next().getWarrior();
-                Warrior warrior2 = it2.next().getWarrior();
+                Warrior warrior1 = it1.next();
+                Warrior warrior2 = it2.next();
+
                 fight(warrior1, warrior2);
-                System.out.println(warrior1 + " -> " + warrior2);
+
                 first = it1.hasNext();
                 second = it2.hasNext();
             }
-            count += 1;
-            System.out.println();
-
         }
     }
 }

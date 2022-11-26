@@ -43,7 +43,7 @@ public class Army {
     class FirstAliveIterator implements Iterator<Warrior> {
 
         Iterator<WarriorInArmy> iterator = troops.iterator();
-        WarriorInArmy champion;
+        Warrior champion;
 
         @Override
         public boolean hasNext() {
@@ -67,11 +67,11 @@ public class Army {
         }
     }
 
-    public Iterator<WarriorInArmy> nextAliveIterator() {
+    public Iterator<Warrior> nextAliveIterator() {
         return new NextAliveIterator();
     }
 
-    class NextAliveIterator implements Iterator<WarriorInArmy> {
+    class NextAliveIterator implements Iterator<Warrior> {
         Iterator<WarriorInArmy> iterator = troops.iterator();
 
         WarriorInArmy nextAlive;
@@ -86,8 +86,8 @@ public class Army {
         }
 
         @Override
-        public WarriorInArmy next() {
-            return nextAlive;
+        public Warrior next() {
+            return nextAlive.unwrap();
         }
     }
 
