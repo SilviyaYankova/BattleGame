@@ -4,6 +4,7 @@ public interface Warrior {
     int getAttack();
 
     int getHealth();
+    void setHealth(int health);
 
     default boolean isAlive() {
         return getHealth() > 0;
@@ -14,4 +15,6 @@ public interface Warrior {
     void receiveDamage(int attack);
 
     void healBy(int healPoints);
+
+    Warrior getWarrior();
 }

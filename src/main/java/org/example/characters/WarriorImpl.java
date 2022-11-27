@@ -15,6 +15,11 @@ public class WarriorImpl implements Warrior {
         this.health = health;
     }
 
+    @Override
+    public Warrior getWarrior() {
+        return warrior;
+    }
+
     public WarriorImpl(Warrior warrior) {
         this(50);
         this.warrior = warrior;
@@ -30,7 +35,8 @@ public class WarriorImpl implements Warrior {
         return health;
     }
 
-    private void setHealth(int health) {
+    @Override
+    public void setHealth(int health) {
         this.health = Math.min(initialHealth, health);
     }
 

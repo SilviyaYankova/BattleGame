@@ -18,7 +18,7 @@ public class Lancer extends WarriorImpl {
     @Override
     public void hit(Warrior opponent) {
         int healthBeforeAttacked = opponent.getHealth();
-        super.hit(opponent);
+        opponent.receiveDamage(getAttack());
 
         if (opponent instanceof HasWarriorBehind opponentWithNext) {
             Warrior nextWarrior = opponentWithNext.getWarriorBehind();

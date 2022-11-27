@@ -4,90 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="Implementing Healer.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/CanProcessCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/ChampionHitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="29812aa6-dfb8-427d-8e6a-f94592836f52" name="Changes" comment="Implemented straight fight.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/battles/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Army.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Healer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Healer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Lancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Lancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/characters/WarriorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/characters/WarriorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/decorators/WarriorInArmyDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/decorators/HasWarriorBehind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/decorators/WarriorInArmyDecoratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/decorators/WarriorInArmy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/handlers/HealHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/handlers/HealHandlerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/decorators/WarriorInArmy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/decorators/WarriorInArmy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demos/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/battles/StraightFight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/battles/StraightFight.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit5 Test Class" />
-        <option value="Interface" />
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-17.0.1/lib/src.zip!/java.base/java/util/Arrays.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$USER_HOME$/.jdks/openjdk-17.0.1/lib/src.zip!/java.base/java/util/function/Supplier.java" root0="SKIP_INSPECTION" />
   </component>
-  <component name="ProjectId" id="2HLZGZ7VazroaG5yQkIQ1lwAXJf" />
+  <component name="ProjectId" id="2I6N5kCsaRl7DrkFOpyap0NEkwv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/desktop" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
-    <property name="settings.editor.splitter.proportion" value="0.24198553" />
   </component>
-  <component name="ReaderModeSettings">
-    <option name="enabled" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="battles" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="characters" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="characters" />
-      <recent name="battles" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JUnit.VampireTest">
-    <configuration name="Duel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="StraightFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gamewarriorandknight" />
       <extension name="coverage">
         <pattern>
@@ -96,67 +46,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.Duel" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HealerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="battles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.HealerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LancerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="battles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.LancerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VampireTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="battles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.VampireTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WarriorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gamewarriorandknight" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="battles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="battles" />
-      <option name="MAIN_CLASS_NAME" value="battles.WarriorTest" />
+      <option name="MAIN_CLASS_NAME" value="battles.StraightFight" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,317 +54,35 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VampireTest" />
-        <item itemvalue="JUnit.WarriorTest" />
-        <item itemvalue="JUnit.LancerTest" />
-        <item itemvalue="JUnit.HealerTest" />
-        <item itemvalue="JUnit.Duel" />
+        <item itemvalue="JUnit.StraightFight" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="03d164f8-efcd-4b5e-bef7-6da7f44c5fca" name="Changes" comment="" />
-      <created>1668066228641</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1668066228641</updated>
-      <workItem from="1668066230126" duration="8905000" />
-      <workItem from="1668075951508" duration="2300000" />
-      <workItem from="1668085131776" duration="9834000" />
-      <workItem from="1668103221862" duration="491000" />
-      <workItem from="1668103735052" duration="1488000" />
-      <workItem from="1668179570067" duration="603000" />
-      <workItem from="1668180435776" duration="2714000" />
-      <workItem from="1668439325174" duration="1186000" />
-      <workItem from="1668487808972" duration="28597000" />
-      <workItem from="1668578018439" duration="1653000" />
-      <workItem from="1668580389526" duration="6510000" />
-      <workItem from="1668591339306" duration="52000" />
-      <workItem from="1668594588148" duration="1204000" />
-      <workItem from="1668607219373" duration="8555000" />
-      <workItem from="1668628145393" duration="1581000" />
-      <workItem from="1668670452892" duration="12546000" />
-      <workItem from="1668749645921" duration="7349000" />
-      <workItem from="1668797213131" duration="7707000" />
-      <workItem from="1668928241129" duration="14697000" />
-      <workItem from="1668959538058" duration="17202000" />
-      <workItem from="1669019780297" duration="97000" />
-      <workItem from="1669030941782" duration="58000" />
-      <workItem from="1669031317914" duration="3101000" />
-      <workItem from="1669043497781" duration="6747000" />
-      <workItem from="1669054154874" duration="3885000" />
-      <workItem from="1669060230413" duration="14000" />
-      <workItem from="1669102451468" duration="28846000" />
-      <workItem from="1669183107437" duration="16535000" />
-      <workItem from="1669213334615" duration="5845000" />
-      <workItem from="1669278122546" duration="540000" />
-      <workItem from="1669286460684" duration="16000" />
-      <workItem from="1669308903157" duration="2640000" />
-      <workItem from="1669311604175" duration="53000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <created>1668100650642</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1668100650642</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Fixed constructors, tests and added javadoc.">
-      <created>1668103380581</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1668103380581</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fixed constructors, tests and added javadoc.">
-      <created>1668104003488</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1668104003488</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fixed javadoc.">
-      <created>1668104431613</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1668104431613</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Changes in Warrior.">
-      <created>1668493960626</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1668493960626</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Changes in BattleTest, using ParameterizedTest;">
-      <created>1668495764063</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1668495764063</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Changes in BattleTest, using ParameterizedTest;">
-      <created>1668495788398</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1668495788398</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added Army class and implemented .addUnits().">
-      <created>1668523916060</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1668523916060</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Implemented logic for armies battle.">
-      <created>1668528717857</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1668528717857</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added tests for army battles.">
-      <created>1668532135432</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1668532135432</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Implemented Defender class and its logic about defence.">
-      <created>1668582478254</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1668582478254</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Added Tests for Defender.">
-      <created>1668584099056</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1668584099056</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Updated Tests.">
-      <created>1668586179406</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1668586179406</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Updated Tests.">
-      <created>1668615281294</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1668615281294</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Overriding the receiveDamage method in Defender.">
-      <created>1668670802025</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1668670802025</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Implemented Vampire class and tests.">
-      <created>1668674213725</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1668674213725</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Implemented Vampire class and tests.">
-      <created>1668689013118</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1668689013118</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Implemented Vampire class and tests.">
-      <created>1668695901183</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1668695901183</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Implemented Vampire class and tests.">
-      <created>1668698744141</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1668698744141</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Initial commit of the branch.">
-      <created>1668711237134</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1668711237134</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Implementing Lancer.">
-      <created>1669035720515</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1669035720515</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Changing implementation of hit() in Lancer.">
-      <created>1669057340800</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1669057340800</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Changing structure of tests.">
-      <created>1669059203890</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1669059203890</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Changing structure of tests.">
-      <created>1669120365028</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1669120365028</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Implementing Healer.">
-      <created>1669213408064</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1669213408064</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="my-branch" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="Fixed constructors, tests and added javadoc." />
-    <MESSAGE value="Fixed javadoc." />
-    <MESSAGE value="Changes in Warrior." />
-    <MESSAGE value="Changes in BattleTest, using ParameterizedTest;" />
-    <MESSAGE value="Added Army class and implemented .addUnits()." />
-    <MESSAGE value="Implemented logic for armies battle." />
-    <MESSAGE value="Added tests for army battles." />
-    <MESSAGE value="Implemented Defender class and its logic about defence." />
-    <MESSAGE value="Added Tests for Defender." />
-    <MESSAGE value="Updated Tests." />
-    <MESSAGE value="Overriding the receiveDamage method in Defender." />
-    <MESSAGE value="Implemented Vampire class and tests." />
-    <MESSAGE value="Initial commit of the branch." />
-    <MESSAGE value="Implementing Lancer." />
-    <MESSAGE value="Changing implementation of hit() in Lancer." />
-    <MESSAGE value="Changing implementation of Lancer using Decorator." />
-    <MESSAGE value="Implementing Healer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Healer." />
+    <MESSAGE value="Implemented straight fight." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented straight fight." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.util.NoSuchElementException" package="java.util" />
-          <option name="timeStamp" value="40" />
-        </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/battles/WarriorTest.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="174" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="org.example.characters.WarriorImpl" memberName="warrior" />
         <PinnedItemInfo parentTag="org.example.characters.Healer" memberName="initialHealth" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="warrior1" />
-      </configuration>
-      <configuration name="Application">
-        <watch expression="warrior1" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/gamewarriorandknight$Main.ic" NAME="Main Coverage Results" MODIFIED="1669116009615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>demos.*</FILTER>
+    <SUITE FILE_PATH="coverage/gamewarriorandknight$Main.ic" NAME="Main Coverage Results" MODIFIED="1669399077896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.demos.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/gamewarriorandknight$BattleTest_whenWarriorFightsAgainstWarriorExpectFirstWarriorWins.ic" NAME="BattleTest.whenWarriorFightsAgainstWarriorExpectFirstWarriorWins Coverage Results" MODIFIED="1668491584474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>characters.*</FILTER>
