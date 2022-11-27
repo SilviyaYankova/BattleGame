@@ -16,7 +16,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-public class Duel {
+public class DuelTest {
     @DisplayName("Two warriors fight")
     @ParameterizedTest(name = "[{index}] {0} fights against {1}, expected  result = {2}")
     @MethodSource("testTwoWarriorFight")

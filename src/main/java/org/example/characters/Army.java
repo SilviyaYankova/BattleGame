@@ -2,6 +2,7 @@ package org.example.characters;
 
 
 import org.example.decorators.WarriorInArmy;
+import org.example.weapons.Weapon;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -91,9 +92,14 @@ public class Army {
         }
     }
 
-
     @Override
     public String toString() {
         return getClass().getSimpleName() + " " + troops.size();
     }
+
+   public Army equipWarriorAtPosition(int position, Weapon weapon) {
+       WarriorInArmy warriorInArmy = troops.get(position);
+       warriorInArmy.equipWeapon(weapon);
+       return this;
+   }
 }

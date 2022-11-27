@@ -1,9 +1,16 @@
 package org.example.characters;
 
+import org.example.weapons.Weapon;
+
+import java.util.List;
+
 public interface Warrior {
     int getAttack();
 
+    void setAttack(int attack);
+
     int getHealth();
+
     void setHealth(int health);
 
     default boolean isAlive() {
@@ -17,4 +24,8 @@ public interface Warrior {
     void healBy(int healPoints);
 
     Warrior getWarrior();
+
+    void equipWeapon(Weapon weapon);
+
+    List<Weapon> getWeapons();
 }
