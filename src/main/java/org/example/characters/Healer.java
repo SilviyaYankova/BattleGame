@@ -7,24 +7,25 @@ import org.example.decorators.WarriorInArmy;
 import org.example.weapons.Weapon;
 
 public class Healer extends WarriorImpl implements CanProcessCommand {
-    private static int ATTACK = 0;
-    private static int HEAL_POWER = 2;
+    private static final int HEAL_POWER = 2;
 
     public Healer() {
         super(60);
     }
 
-    public int getHealPower() {
-        return HEAL_POWER;
-    }
-
-    public static void setHealPower(int healPower) {
-        HEAL_POWER = healPower;
-    }
-
     @Override
-    public int getAttack() {
-        return ATTACK;
+    public void hit(Warrior opponent) {
+        // do nothing
+    }
+
+    public int getHealPower() {
+        int newHealPower = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newHealPower += weapon.getHealPower();
+            }
+        }
+        return Math.max(0, HEAL_POWER + newHealPower);
     }
 
     @Override
@@ -40,11 +41,4 @@ public class Healer extends WarriorImpl implements CanProcessCommand {
         }
     }
 
-    @Override
-    public void equipWeapon(Weapon weapon) {
-        getWeapons().add(weapon);
-        setHealth(Math.max(0, getHealth() + weapon.getHealth()));
-        setHealPower(Math.max(0, getHealPower() + weapon.getHealPower()));
-
-    }
 }

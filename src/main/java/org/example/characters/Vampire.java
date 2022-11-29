@@ -4,8 +4,8 @@ import org.example.weapons.Weapon;
 
 public class Vampire extends WarriorImpl {
 
-    private static int ATTACK = 4;
-    private static int VAMPIRISM = 50;
+    private static final int ATTACK = 4;
+    private static final int VAMPIRISM = 50;
 
     public Vampire() {
         super(40);
@@ -13,20 +13,25 @@ public class Vampire extends WarriorImpl {
 
     @Override
     public int getAttack() {
-        return ATTACK;
-    }
+        int newAttack = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newAttack += weapon.getAttack();
+            }
+        }
 
-    @Override
-    public void setAttack(int attack) {
-        Vampire.ATTACK = attack;
+        return Math.max(0, ATTACK + newAttack);
     }
 
     public int getVampirism() {
-        return VAMPIRISM;
-    }
+        int newVampirism = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newVampirism += weapon.getVampirism();
+            }
+        }
 
-    public void setVampirism(int vampirism) {
-        Vampire.VAMPIRISM = vampirism;
+        return Math.max(0, VAMPIRISM + newVampirism);
     }
 
     @Override
@@ -38,13 +43,5 @@ public class Vampire extends WarriorImpl {
         int percentages = 100;
         int healPoints = damage * getVampirism() / percentages;
         healBy(healPoints);
-    }
-
-    @Override
-    public void equipWeapon(Weapon weapon) {
-        getWeapons().add(weapon);
-        setHealth(Math.max(0, getHealth() + weapon.getHealth()));
-        setAttack(Math.max(0, getAttack() + weapon.getAttack()));
-        setVampirism(Math.max(0, getVampirism() + weapon.getVampirism()));
     }
 }

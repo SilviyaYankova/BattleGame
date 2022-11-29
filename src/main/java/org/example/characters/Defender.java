@@ -3,8 +3,8 @@ package org.example.characters;
 import org.example.weapons.Weapon;
 
 public class Defender extends WarriorImpl {
-    private static int ATTACK = 3;
-    private static int defense = 2;
+    private static final int ATTACK = 3;
+    private static final int DEFENSE = 2;
 
     public Defender() {
         super(60);
@@ -12,20 +12,25 @@ public class Defender extends WarriorImpl {
 
     @Override
     public int getAttack() {
-        return ATTACK;
-    }
+        int newAttack = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newAttack += weapon.getAttack();
+            }
+        }
 
-    @Override
-    public void setAttack(int attack) {
-        Defender.ATTACK = attack;
+        return Math.max(0, ATTACK + newAttack);
     }
 
     public int getDefense() {
-        return defense;
-    }
+        int newDefence = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newDefence += weapon.getDefense();
+            }
+        }
 
-    public static void setDefense(int defense) {
-        Defender.defense = defense;
+        return Math.max(0, DEFENSE + newDefence);
     }
 
     @Override
@@ -33,14 +38,5 @@ public class Defender extends WarriorImpl {
         if (attack > getDefense()) {
             super.receiveDamage(Math.max(0, attack - getDefense()));
         }
-    }
-
-    @Override
-    public void equipWeapon(Weapon weapon) {
-        getWeapons().add(weapon);
-        setHealth(Math.max(0, getHealth() + weapon.getHealth()));
-        setAttack(Math.max(0, getAttack() + weapon.getAttack()));
-        setDefense(Math.max(0, getDefense() + weapon.getDefense()));
-
     }
 }

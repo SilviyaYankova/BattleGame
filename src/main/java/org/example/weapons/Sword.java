@@ -1,13 +1,11 @@
 package org.example.weapons;
 
-
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Builder
+@AllArgsConstructor
 @Getter
 public class Sword implements Weapon {
     int health;
     int attack;
-
 }

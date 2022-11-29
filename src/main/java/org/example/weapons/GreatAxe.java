@@ -1,9 +1,9 @@
 package org.example.weapons;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Builder
+@AllArgsConstructor
 @Getter
 public class GreatAxe implements Weapon {
     int health;

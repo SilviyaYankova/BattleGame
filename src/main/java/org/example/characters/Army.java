@@ -15,14 +15,6 @@ public class Army {
         this.troops = new ArrayList<>();
     }
 
-    public List<WarriorInArmy> getTroops() {
-        return troops;
-    }
-
-    public void setTroops(List<WarriorInArmy> troops) {
-        this.troops = troops;
-    }
-
     public Army addUnits(Supplier<Warrior> factory, int quantity) {
         for (int i = 0; i < quantity; i++) {
             Warrior warrior = factory.get();
@@ -97,9 +89,8 @@ public class Army {
         return getClass().getSimpleName() + " " + troops.size();
     }
 
-   public Army equipWarriorAtPosition(int position, Weapon weapon) {
+   public void equipWarriorAtPosition(int position, Weapon weapon) {
        WarriorInArmy warriorInArmy = troops.get(position);
        warriorInArmy.equipWeapon(weapon);
-       return this;
    }
 }

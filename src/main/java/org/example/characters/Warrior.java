@@ -7,8 +7,6 @@ import java.util.List;
 public interface Warrior {
     int getAttack();
 
-    void setAttack(int attack);
-
     int getHealth();
 
     void setHealth(int health);

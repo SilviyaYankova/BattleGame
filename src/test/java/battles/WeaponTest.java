@@ -4,14 +4,11 @@ import characters.Rookie;
 import org.example.battles.Battle;
 import org.example.characters.*;
 import org.example.weapons.*;
-import org.example.weapons.WeaponImpl;
+import org.example.weapons.SuperWeapon;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.example.weapons.Weapon.newSword;
-import static org.example.weapons.Weapon.newMagicWand;
-import static org.example.weapons.Weapon.newKatana;
-import static org.example.weapons.Weapon.newShield;
-import static org.example.weapons.Weapon.newGreatAxe;
+
+import static org.example.weapons.Weapon.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -138,8 +135,8 @@ public class WeaponTest {
     @Test
     @DisplayName("8. ")
     void eight() {
-        Weapon weapon_1 = new WeaponImpl(-20, 6, 1, 40, -2);
-        Weapon weapon_2 = new WeaponImpl(20, -2, 2, -55, 3);
+        Weapon weapon_1 = new SuperWeapon(-20, 6, 1, 40, -2);
+        Weapon weapon_2 = new SuperWeapon(20, -2, 2, -55, 3);
 
         Army myArmy = new Army();
         myArmy.addUnits(Knight::new, 3);
@@ -162,8 +159,8 @@ public class WeaponTest {
     @Test
     @DisplayName("9. ")
     void nine() {
-        Weapon weapon_1 = new WeaponImpl(-20, 1, 1, 40, -2);
-        Weapon weapon_2 = new WeaponImpl(20, 2, 2, -55, 3);
+        Weapon weapon_1 = new SuperWeapon(-20, 1, 1, 40, -2);
+        Weapon weapon_2 = new SuperWeapon(20, 2, 2, -55, 3);
 
         Army myArmy = new Army();
         myArmy.addUnits(Vampire::new, 3);

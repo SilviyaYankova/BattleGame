@@ -46,11 +46,6 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
     }
 
     @Override
-    public void setAttack(int attack) {
-        warrior.setAttack(attack);
-    }
-
-    @Override
     public void hit(Warrior opponent) {
         warrior.hit(opponent);
         processCommand(ChampionHitCommand.INSTANCE, this);

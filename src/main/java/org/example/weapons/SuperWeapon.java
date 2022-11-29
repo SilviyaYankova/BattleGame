@@ -5,11 +5,10 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class WeaponImpl implements Weapon{
+public class SuperWeapon implements Weapon {
     int health;
     int attack;
     int defense;
     int vampirism;
     int healPower;
-
 }

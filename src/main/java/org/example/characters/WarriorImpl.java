@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WarriorImpl implements Warrior {
-    private static int ATTACK = 5;
+    private static final int ATTACK = 5;
     private int health;
     private final int initialHealth;
     Warrior warrior;
@@ -39,11 +39,14 @@ public class WarriorImpl implements Warrior {
 
     @Override
     public int getAttack() {
-        return ATTACK;
-    }
+        int newAttack = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newAttack += weapon.getAttack();
+            }
+        }
 
-    public void setAttack(int attack) {
-        ATTACK = attack;
+        return Math.max(0, ATTACK + newAttack);
     }
 
     @Override
@@ -53,7 +56,7 @@ public class WarriorImpl implements Warrior {
 
     @Override
     public void setHealth(int health) {
-        this.health = health;
+        this.health = Math.min(initialHealth, health);
     }
 
     @Override
@@ -68,9 +71,7 @@ public class WarriorImpl implements Warrior {
 
     @Override
     public void receiveDamage(int attack) {
-        if (attack > 0) {
             setHealth(health - attack);
-        }
     }
 
 
@@ -78,7 +79,6 @@ public class WarriorImpl implements Warrior {
     public void equipWeapon(Weapon weapon) {
         getWeapons().add(weapon);
         setHealth(Math.max(0, getHealth() + weapon.getHealth()));
-        setAttack(Math.max(0, getAttack() + weapon.getAttack()));
     }
 
     @Override
