@@ -19,13 +19,8 @@ public class Healer extends WarriorImpl implements CanProcessCommand {
     }
 
     public int getHealPower() {
-        int newHealPower = 0;
-        if (!getWeapons().isEmpty()) {
-            for (Weapon weapon : getWeapons()) {
-                newHealPower += weapon.getHealPower();
-            }
-        }
-        return Math.max(0, HEAL_POWER + newHealPower);
+        int bonusHealPower = getWeapons().stream().mapToInt(Weapon::getHealPower).sum();
+        return Math.max(0, HEAL_POWER + bonusHealPower);
     }
 
     @Override

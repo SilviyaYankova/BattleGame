@@ -21,8 +21,6 @@ public interface Warrior {
 
     void healBy(int healPoints);
 
-    Warrior getWarrior();
-
     void equipWeapon(Weapon weapon);
 
     List<Weapon> getWeapons();

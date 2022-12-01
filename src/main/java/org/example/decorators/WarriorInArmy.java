@@ -16,11 +16,6 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
         this.warrior = warrior;
     }
 
-    @Override
-    public Warrior getWarrior() {
-        return warrior;
-    }
-
     public void setNextWarrior(WarriorInArmy nextWarrior) {
         this.nextWarrior = nextWarrior;
     }

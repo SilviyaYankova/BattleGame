@@ -12,25 +12,13 @@ public class Defender extends WarriorImpl {
 
     @Override
     public int getAttack() {
-        int newAttack = 0;
-        if (!getWeapons().isEmpty()) {
-            for (Weapon weapon : getWeapons()) {
-                newAttack += weapon.getAttack();
-            }
-        }
-
-        return Math.max(0, ATTACK + newAttack);
+        int bonusAttack = getWeapons().stream().mapToInt(Weapon::getAttack).sum();
+        return Math.max(0, ATTACK + bonusAttack);
     }
 
     public int getDefense() {
-        int newDefence = 0;
-        if (!getWeapons().isEmpty()) {
-            for (Weapon weapon : getWeapons()) {
-                newDefence += weapon.getDefense();
-            }
-        }
-
-        return Math.max(0, DEFENSE + newDefence);
+        int bonusDefence = getWeapons().stream().mapToInt(Weapon::getDefense).sum();
+        return Math.max(0, DEFENSE + bonusDefence);
     }
 
     @Override

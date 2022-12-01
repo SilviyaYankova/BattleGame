@@ -9,8 +9,8 @@ public class WarriorImpl implements Warrior {
     private static final int ATTACK = 5;
     private int health;
     private final int initialHealth;
-    Warrior warrior;
-    List<Weapon> weapons;
+    private Warrior warrior;
+    private List<Weapon> weapons;
 
     public WarriorImpl() {
         this(50);
@@ -28,25 +28,14 @@ public class WarriorImpl implements Warrior {
     }
 
     @Override
-    public Warrior getWarrior() {
-        return warrior;
-    }
-
-    @Override
     public List<Weapon> getWeapons() {
         return weapons;
     }
 
     @Override
     public int getAttack() {
-        int newAttack = 0;
-        if (!getWeapons().isEmpty()) {
-            for (Weapon weapon : getWeapons()) {
-                newAttack += weapon.getAttack();
-            }
-        }
-
-        return Math.max(0, ATTACK + newAttack);
+        int bonusAttack = getWeapons().stream().mapToInt(Weapon::getAttack).sum();
+        return Math.max(0, ATTACK + bonusAttack);
     }
 
     @Override
@@ -71,7 +60,7 @@ public class WarriorImpl implements Warrior {
 
     @Override
     public void receiveDamage(int attack) {
-            setHealth(health - attack);
+        setHealth(health - attack);
     }
 
 
