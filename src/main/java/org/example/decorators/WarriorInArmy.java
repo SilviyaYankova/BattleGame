@@ -1,10 +1,12 @@
 package org.example.decorators;
 
 import org.example.characters.Warrior;
-import org.example.characters.WarriorImpl;
 import org.example.commands.CanProcessCommand;
 import org.example.commands.ChampionHitCommand;
 import org.example.commands.Command;
+import org.example.weapons.Weapon;
+
+import java.util.List;
 
 public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessCommand {
     Warrior warrior;
@@ -17,10 +19,6 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
     @Override
     public Warrior getWarrior() {
         return warrior;
-    }
-
-    public void setWarrior(Warrior warrior) {
-        this.warrior = warrior;
     }
 
     public void setNextWarrior(WarriorInArmy nextWarrior) {
@@ -76,5 +74,15 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
 
     public Warrior unwrap() {
         return warrior;
+    }
+
+    @Override
+    public List<Weapon> getWeapons() {
+        return warrior.getWeapons();
+    }
+
+    @Override
+    public void equipWeapon(Weapon weapon) {
+        warrior.getWeapons().add(weapon);
     }
 }

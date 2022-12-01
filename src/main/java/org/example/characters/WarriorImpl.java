@@ -1,23 +1,19 @@
 package org.example.characters;
 
+import org.example.weapons.Weapon;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class WarriorImpl implements Warrior {
     private static final int ATTACK = 5;
     private int health;
     private final int initialHealth;
     Warrior warrior;
+    List<Weapon> weapons;
 
     public WarriorImpl() {
         this(50);
-    }
-
-    protected WarriorImpl(int health) {
-        this.initialHealth = health;
-        this.health = health;
-    }
-
-    @Override
-    public Warrior getWarrior() {
-        return warrior;
     }
 
     public WarriorImpl(Warrior warrior) {
@@ -25,9 +21,32 @@ public class WarriorImpl implements Warrior {
         this.warrior = warrior;
     }
 
+    protected WarriorImpl(int health) {
+        this.initialHealth = health;
+        this.health = health;
+        weapons = new ArrayList<>();
+    }
+
+    @Override
+    public Warrior getWarrior() {
+        return warrior;
+    }
+
+    @Override
+    public List<Weapon> getWeapons() {
+        return weapons;
+    }
+
     @Override
     public int getAttack() {
-        return ATTACK;
+        int newAttack = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newAttack += weapon.getAttack();
+            }
+        }
+
+        return Math.max(0, ATTACK + newAttack);
     }
 
     @Override
@@ -52,9 +71,14 @@ public class WarriorImpl implements Warrior {
 
     @Override
     public void receiveDamage(int attack) {
-        if (attack > 0) {
-        setHealth(health - attack);
-        }
+            setHealth(health - attack);
+    }
+
+
+    @Override
+    public void equipWeapon(Weapon weapon) {
+        getWeapons().add(weapon);
+        setHealth(Math.max(0, getHealth() + weapon.getHealth()));
     }
 
     @Override

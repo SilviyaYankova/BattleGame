@@ -4,26 +4,32 @@ import org.example.commands.CanProcessCommand;
 import org.example.commands.ChampionHitCommand;
 import org.example.commands.Command;
 import org.example.decorators.WarriorInArmy;
+import org.example.weapons.Weapon;
 
 public class Healer extends WarriorImpl implements CanProcessCommand {
-    private static final int ATTACK = 0;
     private static final int HEAL_POWER = 2;
 
     public Healer() {
         super(60);
     }
 
+    @Override
+    public void hit(Warrior opponent) {
+        // do nothing
+    }
+
     public int getHealPower() {
-        return HEAL_POWER;
+        int newHealPower = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newHealPower += weapon.getHealPower();
+            }
+        }
+        return Math.max(0, HEAL_POWER + newHealPower);
     }
 
     @Override
-    public int getAttack() {
-        return ATTACK;
-    }
-
-    @Override
-    public void processCommand(Command  command, WarriorInArmy sender) {
+    public void processCommand(Command command, WarriorInArmy sender) {
         if (command instanceof ChampionHitCommand) {
             heal(sender);
         }
@@ -34,4 +40,5 @@ public class Healer extends WarriorImpl implements CanProcessCommand {
             w.healBy(getHealPower());
         }
     }
+
 }

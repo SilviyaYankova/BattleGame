@@ -1,13 +1,9 @@
 package org.example.battles;
 
 import org.example.characters.Army;
-import org.example.characters.Lancer;
 import org.example.characters.Warrior;
-import org.example.characters.WarriorImpl;
-import org.example.decorators.WarriorInArmy;
 
 import java.util.Iterator;
-import java.util.List;
 
 public class Battle {
 

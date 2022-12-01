@@ -2,6 +2,7 @@ package org.example.characters;
 
 
 import org.example.decorators.WarriorInArmy;
+import org.example.weapons.Weapon;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -12,14 +13,6 @@ public class Army {
 
     public Army() {
         this.troops = new ArrayList<>();
-    }
-
-    public List<WarriorInArmy> getTroops() {
-        return troops;
-    }
-
-    public void setTroops(List<WarriorInArmy> troops) {
-        this.troops = troops;
     }
 
     public Army addUnits(Supplier<Warrior> factory, int quantity) {
@@ -91,9 +84,13 @@ public class Army {
         }
     }
 
-
     @Override
     public String toString() {
         return getClass().getSimpleName() + " " + troops.size();
     }
+
+   public void equipWarriorAtPosition(int position, Weapon weapon) {
+       WarriorInArmy warriorInArmy = troops.get(position);
+       warriorInArmy.equipWeapon(weapon);
+   }
 }

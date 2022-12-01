@@ -1,6 +1,7 @@
 package org.example.characters;
 
 import org.example.decorators.HasWarriorBehind;
+import org.example.weapons.Weapon;
 
 public class Lancer extends WarriorImpl {
     private static final int ATTACK = 6;
@@ -8,7 +9,14 @@ public class Lancer extends WarriorImpl {
 
     @Override
     public int getAttack() {
-        return ATTACK;
+        int newAttack = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newAttack += weapon.getAttack();
+            }
+        }
+
+        return Math.max(0, ATTACK + newAttack);
     }
 
     public int getAdditionalDamage() {

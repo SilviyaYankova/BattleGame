@@ -1,5 +1,7 @@
 package org.example.characters;
 
+import org.example.weapons.Weapon;
+
 public class Vampire extends WarriorImpl {
 
     private static final int ATTACK = 4;
@@ -11,11 +13,25 @@ public class Vampire extends WarriorImpl {
 
     @Override
     public int getAttack() {
-        return ATTACK;
+        int newAttack = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newAttack += weapon.getAttack();
+            }
+        }
+
+        return Math.max(0, ATTACK + newAttack);
     }
 
     public int getVampirism() {
-        return VAMPIRISM;
+        int newVampirism = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newVampirism += weapon.getVampirism();
+            }
+        }
+
+        return Math.max(0, VAMPIRISM + newVampirism);
     }
 
     @Override

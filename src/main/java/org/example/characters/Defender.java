@@ -1,5 +1,7 @@
 package org.example.characters;
 
+import org.example.weapons.Weapon;
+
 public class Defender extends WarriorImpl {
     private static final int ATTACK = 3;
     private static final int DEFENSE = 2;
@@ -10,11 +12,25 @@ public class Defender extends WarriorImpl {
 
     @Override
     public int getAttack() {
-        return ATTACK;
+        int newAttack = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newAttack += weapon.getAttack();
+            }
+        }
+
+        return Math.max(0, ATTACK + newAttack);
     }
 
     public int getDefense() {
-        return DEFENSE;
+        int newDefence = 0;
+        if (!getWeapons().isEmpty()) {
+            for (Weapon weapon : getWeapons()) {
+                newDefence += weapon.getDefense();
+            }
+        }
+
+        return Math.max(0, DEFENSE + newDefence);
     }
 
     @Override
