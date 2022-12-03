@@ -65,7 +65,7 @@ public class Warlord extends WarriorImpl {
         }
 
         if (others.size() > 1) {
-            if (result.get(0) instanceof Lancer || result.get(0) instanceof Healer) {
+            if (result.get(0) instanceof Lancer) {
                 result.addAll(others);
             } else {
                 for (int i = 1; i < others.size(); i++) {

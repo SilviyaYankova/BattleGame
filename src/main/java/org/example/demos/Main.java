@@ -2,25 +2,23 @@ package org.example.demos;
 
 import org.example.battles.Battle;
 import org.example.characters.*;
+import org.example.weapons.Weapon;
 
 public class Main {
     public static void main(String[] args) {
 
-        var army1 = new Army()
-                .addUnits(WarriorImpl::new, 2)
-                .addUnits(Lancer::new, 2)
-                .addUnits(Defender::new, 1)
-                .addUnits(Warlord::new, 3);
+        Army army1 = new Army()
+                .addUnits(WarriorImpl::new, 5)
+                .addUnits(Defender::new, 4)
+                .addUnits(Defender::new, 5);
 
-        var army2 = new Army()
-                .addUnits(Warlord::new, 2)
-                .addUnits(Vampire::new, 1)
-                .addUnits(Healer::new, 5)
-                .addUnits(Knight::new, 2);
 
-        army1.moveUnits();
-        army2.moveUnits();
+        Army army2 = new Army()
+                .addUnits(Vampire::new, 4);
 
+
+        army1.equipWarriorAtPosition(0, Weapon.newMagicWand());
+        army2.equipWarriorAtPosition(0, Weapon.newMagicWand());
         System.out.println(Battle.fight(army1, army2));
     }
 }

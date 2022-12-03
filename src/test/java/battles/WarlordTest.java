@@ -117,7 +117,6 @@ public class WarlordTest {
         var army2 = new Army()
                 .addUnits(Warlord::new, 5)
                 .addUnits(Vampire::new, 1)
-                .addUnits(Rookie::new, 1)
                 .addUnits(Knight::new, 1);
 
         army1.equipWarriorAtPosition(0, Weapon.newSword());
