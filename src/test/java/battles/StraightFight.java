@@ -20,7 +20,6 @@ public class StraightFight {
 
         var test = Battle.straightFight(army1, army2);
 
-        System.out.println();
         assertEquals(expected, test);
     }
 

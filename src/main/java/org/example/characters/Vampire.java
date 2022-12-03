@@ -13,25 +13,13 @@ public class Vampire extends WarriorImpl {
 
     @Override
     public int getAttack() {
-        int newAttack = 0;
-        if (!getWeapons().isEmpty()) {
-            for (Weapon weapon : getWeapons()) {
-                newAttack += weapon.getAttack();
-            }
-        }
-
-        return Math.max(0, ATTACK + newAttack);
+        int bonusAttack = getWeapons().stream().mapToInt(Weapon::getAttack).sum();
+        return Math.max(0, ATTACK + bonusAttack);
     }
 
     public int getVampirism() {
-        int newVampirism = 0;
-        if (!getWeapons().isEmpty()) {
-            for (Weapon weapon : getWeapons()) {
-                newVampirism += weapon.getVampirism();
-            }
-        }
-
-        return Math.max(0, VAMPIRISM + newVampirism);
+        int bonusVampirism = getWeapons().stream().mapToInt(Weapon::getVampirism).sum();
+        return Math.max(0, VAMPIRISM + bonusVampirism);
     }
 
     @Override

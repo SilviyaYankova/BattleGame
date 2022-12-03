@@ -9,27 +9,15 @@ public class WarriorImpl implements Warrior {
     private static final int ATTACK = 5;
     private int health;
     private final int initialHealth;
-    Warrior warrior;
-    List<Weapon> weapons;
+    private List<Weapon> weapons;
 
     public WarriorImpl() {
         this(50);
     }
 
-    public WarriorImpl(Warrior warrior) {
-        this(50);
-        this.warrior = warrior;
-    }
-
     protected WarriorImpl(int health) {
-        this.initialHealth = health;
-        this.health = health;
+        this.initialHealth = this.health = health;
         weapons = new ArrayList<>();
-    }
-
-    @Override
-    public Warrior getWarrior() {
-        return warrior;
     }
 
     @Override
@@ -39,14 +27,8 @@ public class WarriorImpl implements Warrior {
 
     @Override
     public int getAttack() {
-        int newAttack = 0;
-        if (!getWeapons().isEmpty()) {
-            for (Weapon weapon : getWeapons()) {
-                newAttack += weapon.getAttack();
-            }
-        }
-
-        return Math.max(0, ATTACK + newAttack);
+        int bonusAttack = getWeapons().stream().mapToInt(Weapon::getAttack).sum();
+        return Math.max(0, ATTACK + bonusAttack);
     }
 
     @Override
@@ -54,9 +36,17 @@ public class WarriorImpl implements Warrior {
         return health;
     }
 
+    private int getHealthBonus() {
+        return weapons.stream().mapToInt(Weapon::getHealth).sum();
+    }
+
+    public int getInitialHealth() {
+        return initialHealth + getHealthBonus();
+    }
+
     @Override
     public void setHealth(int health) {
-        this.health = Math.min(initialHealth, health);
+        this.health = Math.min(getInitialHealth(), health);
     }
 
     @Override
@@ -71,7 +61,7 @@ public class WarriorImpl implements Warrior {
 
     @Override
     public void receiveDamage(int attack) {
-            setHealth(health - attack);
+        setHealth(health - attack);
     }
 
 

@@ -1,6 +1,8 @@
 package org.example.decorators;
 
+import org.example.characters.Healer;
 import org.example.characters.Warrior;
+import org.example.characters.WarriorImpl;
 import org.example.commands.CanProcessCommand;
 import org.example.commands.ChampionHitCommand;
 import org.example.commands.Command;
@@ -14,11 +16,6 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
 
     public WarriorInArmy(Warrior warrior) {
         this.warrior = warrior;
-    }
-
-    @Override
-    public Warrior getWarrior() {
-        return warrior;
     }
 
     public void setNextWarrior(WarriorInArmy nextWarrior) {
@@ -83,6 +80,6 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
 
     @Override
     public void equipWeapon(Weapon weapon) {
-        warrior.getWeapons().add(weapon);
+        warrior.equipWeapon(weapon);
     }
 }

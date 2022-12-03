@@ -7,14 +7,8 @@ public class Knight extends WarriorImpl {
 
     @Override
     public int getAttack() {
-        int newAttack = 0;
-        if (!getWeapons().isEmpty()) {
-            for (Weapon weapon : getWeapons()) {
-                newAttack += weapon.getAttack();
-            }
-        }
-
-        return Math.max(0, ATTACK + newAttack);
+        int bonusAttack = getWeapons().stream().mapToInt(Weapon::getAttack).sum();
+        return Math.max(0, ATTACK + bonusAttack);
     }
 
     @Override

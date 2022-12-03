@@ -22,10 +22,6 @@ public interface Weapon {
         return new MagicWand(30, 3, 3);
     }
 
-    static SuperWeapon newSuperWeapon() {
-        return new SuperWeapon(0, 0, 0, 0, 0);
-    }
-
     int getHealth();
 
     int getAttack();
