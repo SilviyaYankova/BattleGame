@@ -1,8 +1,10 @@
 package org.example.characters;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.decorators.HasWarriorBehind;
 import org.example.weapons.Weapon;
 
+@Slf4j
 public class Lancer extends WarriorImpl {
     private static final int ATTACK = 6;
     private static final int ADDITIONAL_DAMAGE = 50;
@@ -24,12 +26,13 @@ public class Lancer extends WarriorImpl {
 
         if (opponent instanceof HasWarriorBehind opponentWithNext) {
             Warrior nextWarrior = opponentWithNext.getWarriorBehind();
-            if (nextWarrior != null) {
+            if (nextWarrior != null && nextWarrior.isAlive()) {
                 int healthAfterAttacked = opponent.getHealth();
                 int damageDealt = healthBeforeAttacked - healthAfterAttacked;
                 int percentages = 100;
                 int attack = damageDealt * getAdditionalDamage() / percentages;
                 nextWarrior.receiveDamage(attack);
+                log.atDebug().log("\tLancer hits next warrior {}", nextWarrior.unwrap());
             }
         }
     }

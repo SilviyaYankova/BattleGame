@@ -10,6 +10,10 @@ public class Defender extends WarriorImpl {
         super(60);
     }
 
+    public Defender(int health) {
+        super(health);
+    }
+
     @Override
     public int getAttack() {
         int bonusAttack = getWeapons().stream().mapToInt(Weapon::getAttack).sum();

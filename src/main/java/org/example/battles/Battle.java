@@ -23,7 +23,7 @@ public class Battle {
             if (warrior2.isAlive()) {
                 warrior2.hit(warrior1);
             }
-            log.atDebug().log("{} vs {}", warrior1, warrior2);
+            log.atDebug().log("{} vs {}", warrior1.unwrap(), warrior2.unwrap());
         }
 
         return warrior1.isAlive();
@@ -40,25 +40,30 @@ public class Battle {
         var it1 = army1.fistsAliveIterator();
         var it2 = army2.fistsAliveIterator();
 
+        int round = 1;
         while (it1.hasNext() && it2.hasNext()) {
             Warrior warrior1 = it1.next();
             Warrior warrior2 = it2.next();
 
+            log.atDebug().log("Army1 {} fights Army2 {}", army1.getTroops().size(), army2.getTroops().size());
+            System.out.println("Round: " + round);
+            log.atDebug().log("{} {attack = {}} hits {} {attack = {}}", warrior1.unwrap(), warrior1.getAttack(),
+                              warrior2.unwrap(), warrior2.getAttack());
             fight(warrior1, warrior2);
+
             if (warrior1.isAlive()) {
                 army2.moveUnits();
-                WarriorInArmy warrior = army2.getTroops().get(army2.getTroops().size() - 1);
-                if (warrior.unwrap() instanceof Warlord) {
+                if (army2.getWarlord() != null) {
                     it2 = army2.fistsAliveIterator();
                 }
             } else {
                 army1.moveUnits();
-                WarriorInArmy warrior = army1.getTroops().get(army1.getTroops().size() - 1);
-                if (warrior.unwrap() instanceof Warlord) {
+                if (army1.getWarlord() != null) {
                     it1 = army1.fistsAliveIterator();
                 }
             }
-
+            round++;
+            log.atDebug().log("");
         }
 
         return it1.hasNext();

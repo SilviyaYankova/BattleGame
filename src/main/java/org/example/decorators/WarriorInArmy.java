@@ -33,6 +33,11 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
     }
 
     @Override
+    public int getInitialHealth() {
+        return warrior.getInitialHealth();
+    }
+
+    @Override
     public int getHealth() {
         return warrior.getHealth();
     }
@@ -66,6 +71,13 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
 
         if (nextWarrior != null) {
             nextWarrior.processCommand(command, this);
+        }
+    }
+
+    @Override
+    public void processCommand(Command command, Warrior sender) {
+        if (warrior instanceof CanProcessCommand w) {
+            w.processCommand(command, sender);
         }
     }
 

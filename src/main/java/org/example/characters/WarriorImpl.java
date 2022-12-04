@@ -75,4 +75,9 @@ public class WarriorImpl implements Warrior {
     public String toString() {
         return getClass().getSimpleName() + " {health = " + health + "}";
     }
+
+    @Override
+    public Warrior unwrap() {
+        return this;
+    }
 }
