@@ -20,7 +20,11 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
 
     @Override
     public int getAttack() {
-        return ATTACK;
+        return ATTACK + getWeapons().stream().mapToInt(Weapon::getAttack).sum();
+    }
+
+    private boolean hasAttack() {
+        return getAttack() > 0;
     }
 
     public int getResurrectionPowers() {
@@ -31,7 +35,7 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
         this.resurrectionPowers = resurrectionPowers;
     }
 
-    public int getMinResurrectionsLeft() {
+    public int getMaxCountResurrection() {
         return MAX_COUNT_RESURRECTION;
     }
 
@@ -39,6 +43,7 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
     public void equipWeapon(Weapon weapon) {
         if (weapon instanceof MagicWand) {
             super.equipWeapon(weapon);
+            setResurrectionPowers(resurrectionPowers + getWeapons().stream().mapToInt(Weapon::getHealPower).sum());
         }
     }
 
@@ -51,31 +56,36 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
 
     private void resurrect(Warrior sender) {
         int initialHealth = sender.getInitialHealth();
-        if (getResurrectionPowers() > getMinResurrectionsLeft()) {
+        if (getResurrectionPowers() > getMaxCountResurrection()) {
             log.atDebug().log("Wizard is resurrecting warrior;");
+            log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
+
+            sender.setHealth(initialHealth);
+            setResurrectionPowers(getResurrectionPowers() - 1);
+
+            log.atDebug().log("\t - {} is resurrected", sender);
+            log.atDebug().log("Wizard after resurrection: {}", resurrectionPowers);
+        } else if (getResurrectionPowers() == getMaxCountResurrection() && sender instanceof Warlord) {
+            log.atDebug().log("Wizard is resurrecting wizard...");
             log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
             sender.setHealth(initialHealth);
             setResurrectionPowers(getResurrectionPowers() - 1);
             log.atDebug().log("\t - {} is resurrected", sender);
             log.atDebug().log("Wizard after resurrection: {}", getResurrectionPowers());
         } else {
-            log.atDebug().log("\t - {} cannot be resurrected", sender);
-        }
-
-        if (getResurrectionPowers() == getMinResurrectionsLeft() && sender instanceof Warlord) {
-            log.atDebug().log("Wizard is resurrecting warrior;");
-            log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
-            sender.setHealth(initialHealth);
-            setResurrectionPowers(getResurrectionPowers() - 1);
-            log.atDebug().log("\t - {} is resurrected", sender);
-            log.atDebug().log("Wizard after resurrection: {}", getResurrectionPowers());
+            log.atDebug().log("Wizard's resurrections kept for Warlord: {}", getResurrectionPowers());
         }
     }
 
     @Override
     public void hit(Warrior opponent) {
-        if (opponent instanceof Wizard) {
-            super.hit(opponent);
+        if (hasAttack()) {
+            opponent.receiveDamage(getAttack());
         }
+
+        if (!hasAttack() && !((Wizard) opponent).hasAttack()) {
+            opponent.setHealth(0);
+        }
+
     }
 }

@@ -109,10 +109,7 @@ public class Army implements Iterable<Warrior> {
             if (champion == null || !champion.isAlive()) {
                 if ((iterator.hasNext())) {
                     champion = iterator.next();
-                    if (!champion.isAlive()) {
-                        return false;
-                    }
-                    return true;
+                    return champion.isAlive();
                 } else {
                     return false;
                 }
@@ -141,7 +138,6 @@ public class Army implements Iterable<Warrior> {
 
     public Army moveUnits() {
         if (warlord != null) {
-            log.atDebug().log("Army is trying to move units...");
             for (WarriorInArmy warrior : troops) {
                 if (!warrior.isAlive()) {
                     deadUnits.add(warrior.unwrap());

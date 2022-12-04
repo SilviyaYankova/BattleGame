@@ -52,11 +52,13 @@ public class Battle {
             fight(warrior1, warrior2);
 
             if (warrior1.isAlive()) {
+                log.atDebug().log("Army2 is trying to move units...");
                 army2.moveUnits();
                 if (army2.getWarlord() != null) {
                     it2 = army2.fistsAliveIterator();
                 }
             } else {
+                log.atDebug().log("Army1 is trying to move units...");
                 army1.moveUnits();
                 if (army1.getWarlord() != null) {
                     it1 = army1.fistsAliveIterator();

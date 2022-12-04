@@ -35,8 +35,12 @@ public class Warlord extends WarriorImpl {
                 log.atDebug().log("\t - Dead warrior: {}", deadWarrior);
                 WarriorInArmy wiz = new WarriorInArmy(wizard);
                 wiz.processCommand(ResurrectWarriorCommand.INSTANCE, deadWarrior);
-                if (deadWarrior.isAlive()) {
+                if (deadWarrior.isAlive() && !(deadWarrior instanceof Warlord)) {
                     list.add(0, deadWarrior);
+                } else {
+                    if (!(deadWarrior instanceof Warlord)) {
+                    log.atDebug().log("\t - {} cannot be resurrected", deadWarrior);
+                    }
                 }
             }
         }
@@ -45,7 +49,7 @@ public class Warlord extends WarriorImpl {
         List<Warrior> healers = list.stream().filter(w -> w instanceof Healer).toList();
         List<Warrior> others = list.stream()
                                    .filter(w -> !(w instanceof Lancer ||
-                                           w instanceof Healer ||w instanceof Wizard)).toList();
+                                           w instanceof Healer || w instanceof Wizard)).toList();
 
         List<Warrior> result = new ArrayList<>();
 
@@ -75,7 +79,10 @@ public class Warlord extends WarriorImpl {
             }
 
         }
-        result.add(this);
+
+        if (this.isAlive()) {
+            result.add(this);
+        }
         if (wizard != null) {
             result.add(wizard);
         }
