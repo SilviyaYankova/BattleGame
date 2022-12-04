@@ -78,7 +78,7 @@ public class WarlordTest {
         army1.moveUnits();
         army2.moveUnits();
 
-//        assertFalse(Battle.fight(army1, army2));
+        assertFalse(Battle.fight(army1, army2));
     }
 
     @Test
@@ -117,6 +117,7 @@ public class WarlordTest {
         var army2 = new Army()
                 .addUnits(Warlord::new, 5)
                 .addUnits(Vampire::new, 1)
+                .addUnits(Rookie::new, 1)
                 .addUnits(Knight::new, 1);
 
         army1.equipWarriorAtPosition(0, Weapon.newSword());

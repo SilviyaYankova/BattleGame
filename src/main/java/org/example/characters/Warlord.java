@@ -3,6 +3,7 @@ package org.example.characters;
 import lombok.extern.slf4j.Slf4j;
 import org.example.commands.ResurrectWarriorCommand;
 import org.example.decorators.WarriorInArmy;
+import org.example.weapons.Weapon;
 
 
 import java.util.ArrayList;
@@ -10,12 +11,26 @@ import java.util.Iterator;
 import java.util.List;
 
 @Slf4j
-public class Warlord extends WarriorImpl {
-    private static final int ATTACK = 3;
-    private static final int DEFENSE = 2;
+public class Warlord extends Defender {
+    private static final int ATTACK = 4;
 
     public Warlord() {
         super(100);
+    }
+
+    @Override
+    public int getAttack() {
+        return ATTACK + getWeapons().stream().mapToInt(Weapon::getAttack).sum();
+    }
+
+    @Override
+    public int getDefense() {
+        return super.getDefense();
+    }
+
+    @Override
+    public void receiveDamage(int attack) {
+        super.receiveDamage(attack);
     }
 
     Iterator<Warrior> moveUnits(Iterable<Warrior> army, List<Warrior> deadUnits) {

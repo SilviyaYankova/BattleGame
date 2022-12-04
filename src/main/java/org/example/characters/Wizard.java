@@ -83,7 +83,7 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
             opponent.receiveDamage(getAttack());
         }
 
-        if (!hasAttack() && !((Wizard) opponent).hasAttack()) {
+        if (!hasAttack() && opponent instanceof Wizard && !((Wizard) opponent).hasAttack()) {
             opponent.setHealth(0);
         }
 

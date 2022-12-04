@@ -20,6 +20,7 @@ public class Battle {
         while (warrior1.isAlive() && warrior2.isAlive()) {
 
             warrior1.hit(warrior2);
+
             if (warrior2.isAlive()) {
                 warrior2.hit(warrior1);
             }
@@ -49,6 +50,7 @@ public class Battle {
             System.out.println("Round: " + round);
             log.atDebug().log("{} {attack = {}} hits {} {attack = {}}", warrior1.unwrap(), warrior1.getAttack(),
                               warrior2.unwrap(), warrior2.getAttack());
+
             fight(warrior1, warrior2);
 
             if (warrior1.isAlive()) {
@@ -75,8 +77,8 @@ public class Battle {
         boolean res;
         int round = 1;
         while (true) {
-            army2.moveUnits();
             army1.moveUnits();
+            army2.moveUnits();
             var it1 = army1.iterator();
             var it2 = army2.iterator();
             log.atDebug().log("Round: {}", round);

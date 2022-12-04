@@ -1,8 +1,8 @@
 package org.example.decorators;
 
 import org.example.characters.Healer;
+import org.example.characters.Lancer;
 import org.example.characters.Warrior;
-import org.example.characters.WarriorImpl;
 import org.example.commands.CanProcessCommand;
 import org.example.commands.ChampionHitCommand;
 import org.example.commands.Command;
@@ -49,6 +49,14 @@ public class WarriorInArmy implements Warrior, HasWarriorBehind, CanProcessComma
 
     @Override
     public void hit(Warrior opponent) {
+        WarriorInArmy warriorBehind = getWarriorBehind();
+        if (this.unwrap() instanceof Healer &&
+                warriorBehind != null &&
+                warriorBehind.unwrap() instanceof Healer) {
+            if (!(opponent.unwrap() instanceof Lancer) && warriorBehind.isAlive()) {
+                warrior.setHealth(0);
+            }
+        }
         warrior.hit(opponent);
         processCommand(ChampionHitCommand.INSTANCE, this);
     }
