@@ -68,12 +68,14 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
         } else if (getResurrectionPowers() == getMaxCountResurrection() && sender instanceof Warlord) {
             log.atDebug().log("Wizard is resurrecting wizard...");
             log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
+
             sender.setHealth(initialHealth);
             setResurrectionPowers(getResurrectionPowers() - 1);
+
             log.atDebug().log("\t - {} is resurrected", sender);
             log.atDebug().log("Wizard after resurrection: {}", getResurrectionPowers());
         } else {
-            log.atDebug().log("Wizard's resurrections kept for Warlord: {}", getResurrectionPowers());
+            log.atDebug().log("Wizard's resurrections reserved for Warlord: {}", getResurrectionPowers());
         }
     }
 
@@ -84,8 +86,7 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
         }
 
         if (!hasAttack() && opponent instanceof Wizard && !((Wizard) opponent).hasAttack()) {
-            opponent.setHealth(0);
+            setHealth(0);
         }
-
     }
 }

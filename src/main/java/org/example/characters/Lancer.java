@@ -32,7 +32,7 @@ public class Lancer extends WarriorImpl {
                 int percentages = 100;
                 int attack = damageDealt * getAdditionalDamage() / percentages;
                 nextWarrior.receiveDamage(attack);
-                log.atDebug().log("\tLancer hits next warrior {}", nextWarrior.unwrap());
+                log.atDebug().log("\t Lancer hits next warrior {}", nextWarrior.unwrap());
             }
         }
     }

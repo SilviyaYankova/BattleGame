@@ -13,15 +13,15 @@ public class WizardTest {
 
     @Test
     @DisplayName("1. Wizard vs Wizard, both without attack")
-    void wizardVsWizardWithoutAttacks() {
+    void wizardVsWizardWithoutAttacksShouldReturnFalse() {
         Wizard wizard1 = new Wizard(2);
         Wizard wizard2 = new Wizard(2);
-        assertTrue(Battle.fight(wizard1, wizard2));
+        assertFalse(Battle.fight(wizard1, wizard2));
     }
 
     @Test
     @DisplayName("2. Adding un allowed weapon to wizard")
-    void wizardWithUnAllowedWeapon() {
+    void wizardWithUnAllowedWeaponShouldReturnTrue() {
         Wizard wizard1 = new Wizard(2);
         Wizard wizard2 = new Wizard(2);
 
@@ -32,7 +32,7 @@ public class WizardTest {
 
     @Test
     @DisplayName("3. Wizard with weapon vs Wizard without weapon")
-    void wizardWithWeaponVsWizardWithoutWeapon() {
+    void wizardWithWeaponVsWizardWithoutWeaponShouldReturnTrue() {
         Wizard wizard1 = new Wizard(2);
         Wizard wizard2 = new Wizard(2);
 
@@ -43,7 +43,7 @@ public class WizardTest {
 
     @Test
     @DisplayName("4. Wizards with weapons")
-    void wizardWithWeapons() {
+    void wizardsWithWeaponsShouldReturnTrue() {
         Wizard wizard1 = new Wizard(2);
         Wizard wizard2 = new Wizard(2);
 
@@ -55,28 +55,8 @@ public class WizardTest {
 
 
     @Test
-    @DisplayName("Stronger Wizard in the second army")
-    void strongerWizardInTheSecondArmy() {
-        var army1 = new Army()
-                .addUnits(() -> new Wizard(1), 1)
-                .addUnits(Warlord::new, 1);
-
-        var army2 = new Army()
-                .addUnits(() -> new Wizard(2), 1)
-                .addUnits(Warlord::new, 1);
-
-        army1.equipWarriorAtPosition(0, Weapon.newMagicWand());
-        army2.equipWarriorAtPosition(0, Weapon.newMagicWand());
-
-        army1.moveUnits();
-        army2.moveUnits();
-
-        assertFalse(Battle.fight(army1, army2));
-    }
-
-    @Test
     @DisplayName("5. Equal armies of wizards and warlords")
-    void equalArmiesOfWizardsAndWarlords() {
+    void equalArmiesOfWizardsAndWarlordsShouldReturnTrue() {
         var army1 = new Army()
                 .addUnits(() -> new Wizard(0), 1)
                 .addUnits(Warlord::new, 1);
@@ -94,9 +74,31 @@ public class WizardTest {
         assertTrue(Battle.fight(army1, army2));
     }
 
+
     @Test
-    @DisplayName("3. Armies with knight, vampire")
-    void three() {
+    @DisplayName("6. Stronger Wizard in the second army")
+    void strongerWizardInTheSecondArmyShouldReturnFalse() {
+        var army1 = new Army()
+                .addUnits(() -> new Wizard(1), 1)
+                .addUnits(Warlord::new, 1);
+
+        var army2 = new Army()
+                .addUnits(() -> new Wizard(2), 1)
+                .addUnits(Warlord::new, 1);
+
+        army1.equipWarriorAtPosition(0, Weapon.newMagicWand());
+        army2.equipWarriorAtPosition(0, Weapon.newMagicWand());
+
+        army1.moveUnits();
+        army2.moveUnits();
+
+        assertFalse(Battle.fight(army1, army2));
+    }
+
+
+    @Test
+    @DisplayName("7. Armies with knight, vampire")
+    void armyOneFightsWithArmyTwoWithVampireShouldReturnTrue() {
         var army1 = new Army()
                 .addUnits(() -> new Wizard(1), 1)
                 .addUnits(Knight::new, 1)
@@ -118,8 +120,8 @@ public class WizardTest {
 
 
     @Test
-    @DisplayName("1.")
-    void one() {
+    @DisplayName("8. Stronger first army wizards without Magic wand")
+    void strongerFirstArmyWizardsWithoutMagicWandShouldReturnTrue() {
         var army1 = new Army()
                 .addUnits(WarriorImpl::new, 2)
                 .addUnits(() -> new Wizard(2), 1)
@@ -140,8 +142,8 @@ public class WizardTest {
     }
 
     @Test
-    @DisplayName("2.")
-    void two() {
+    @DisplayName("9. Stronger first army - Wizard with Magic wand")
+    void strongerFirstArmyWizardWithMagicWandShouldReturnTrue() {
         var army1 = new Army()
                 .addUnits(WarriorImpl::new, 2)
                 .addUnits(() -> new Wizard(2), 1)
@@ -165,8 +167,8 @@ public class WizardTest {
 
 
     @Test
-    @DisplayName("5.")
-    void six() {
+    @DisplayName("10. Stronger first army, both Wizards with Magic wand")
+    void strongerFirstArmyWizardsWithMagicWandShouldReturnTrue() {
         var army1 = new Army()
                 .addUnits(() -> new Wizard(1), 1)
                 .addUnits(WarriorImpl::new, 2)
@@ -193,8 +195,8 @@ public class WizardTest {
 
 
     @Test
-    @DisplayName("7.")
-    void seven() {
+    @DisplayName("11. Straight fight battle")
+    void straightFightBattleShouldReturnTrue() {
         var army1 = new Army()
                 .addUnits(WarriorImpl::new, 2)
                 .addUnits(() -> new Wizard(1), 5)
