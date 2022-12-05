@@ -23,10 +23,6 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
         return ATTACK + getWeapons().stream().mapToInt(Weapon::getAttack).sum();
     }
 
-    private boolean hasAttack() {
-        return getAttack() > 0;
-    }
-
     public int getResurrectionPowers() {
         return resurrectionPowers;
     }
@@ -39,44 +35,8 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
         return RESURRECTION_RESERVED_FOR_WARLORD;
     }
 
-    @Override
-    public void equipWeapon(Weapon weapon) {
-        if (weapon instanceof MagicWand) {
-            super.equipWeapon(weapon);
-            setResurrectionPowers(resurrectionPowers + getWeapons().stream().mapToInt(Weapon::getHealPower).sum());
-        }
-    }
-
-    @Override
-    public void processCommand(Command command, Warrior sender) {
-        if (command instanceof ResurrectWarriorCommand) {
-            resurrect(sender);
-        }
-    }
-
-    private void resurrect(Warrior sender) {
-        int initialHealth = sender.getInitialHealth();
-        if (getResurrectionPowers() > getResurrectionReservedForWarlord()) {
-            log.atDebug().log("Wizard is resurrecting warrior;");
-            log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
-
-            sender.setHealth(initialHealth);
-            setResurrectionPowers(getResurrectionPowers() - 1);
-
-            log.atDebug().log("\t - {} is resurrected", sender);
-            log.atDebug().log("Wizard after resurrection: {}", resurrectionPowers);
-        } else if (getResurrectionPowers() == getResurrectionReservedForWarlord() && sender instanceof Warlord) {
-            log.atDebug().log("Wizard is resurrecting warlord...");
-            log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
-
-            sender.setHealth(initialHealth);
-            setResurrectionPowers(getResurrectionPowers() - 1);
-
-            log.atDebug().log("\t - {} is resurrected", sender);
-            log.atDebug().log("Wizard after resurrection: {}", getResurrectionPowers());
-        } else {
-            log.atDebug().log("Wizard's resurrections reserved for Warlord: {}", getResurrectionPowers());
-        }
+    private boolean hasAttack() {
+        return getAttack() > 0;
     }
 
     @Override
@@ -87,6 +47,47 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
 
         if (!hasAttack() && opponent instanceof Wizard && !((Wizard) opponent).hasAttack()) {
             setHealth(0);
+        }
+    }
+
+    @Override
+    public void equipWeapon(Weapon weapon) {
+        if (weapon instanceof MagicWand) {
+            super.equipWeapon(weapon);
+            setResurrectionPowers(resurrectionPowers + getWeapons().stream().mapToInt(Weapon::getHealPower).sum());
+        }
+    }
+
+
+    @Override
+    public void processCommand(Command command, Warrior deadWarrior) {
+        if (command instanceof ResurrectWarriorCommand) {
+            resurrect(deadWarrior);
+        }
+    }
+
+    private void resurrect(Warrior deadWarrior) {
+        int initialHealth = deadWarrior.getInitialHealth();
+        if (getResurrectionPowers() > getResurrectionReservedForWarlord()) {
+            log.atDebug().log("Wizard is resurrecting warrior;");
+            log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
+
+            deadWarrior.setHealth(initialHealth);
+            setResurrectionPowers(getResurrectionPowers() - 1);
+
+            log.atDebug().log("\t - {} is resurrected", deadWarrior);
+            log.atDebug().log("Wizard after resurrection: {}", resurrectionPowers);
+        } else if (getResurrectionPowers() == getResurrectionReservedForWarlord() && deadWarrior instanceof Warlord) {
+            log.atDebug().log("Wizard is resurrecting warlord...");
+            log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
+
+            deadWarrior.setHealth(initialHealth);
+            setResurrectionPowers(getResurrectionPowers() - 1);
+
+            log.atDebug().log("\t - {} is resurrected", deadWarrior);
+            log.atDebug().log("Wizard after resurrection: {}", getResurrectionPowers());
+        } else {
+            log.atDebug().log("Wizard's resurrections reserved for Warlord: {}", getResurrectionPowers());
         }
     }
 }

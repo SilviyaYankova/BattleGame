@@ -36,16 +36,16 @@ public class Warlord extends Defender {
     Iterator<Warrior> moveUnits(Iterable<Warrior> army, List<Warrior> deadUnits) {
         log.atDebug().log("Warlord is moving units...");
 
-        List<Warrior> aliveArmy = new ArrayList<>();
+        List<Warrior> aliveUnits = new ArrayList<>();
         for (Warrior warrior : army) {
             if (warrior != this) {
-                aliveArmy.add(warrior);
+                aliveUnits.add(warrior);
             }
         }
 
-        Warrior wizard = aliveArmy.stream().filter(w -> w instanceof Wizard).findFirst().orElse(null);
+        Warrior wizard = aliveUnits.stream().filter(w -> w instanceof Wizard).findFirst().orElse(null);
 
-        if (!deadUnits.isEmpty() && wizard != null) {
+        if (wizard != null && !deadUnits.isEmpty()) {
             for (Warrior deadWarrior : deadUnits) {
                 log.atDebug().log("\t - Dead warrior: {}", deadWarrior);
 
@@ -54,7 +54,7 @@ public class Warlord extends Defender {
                 wiz.processCommand(ResurrectWarriorCommand.INSTANCE, deadWarrior);
 
                 if (deadWarrior.isAlive() && !(deadWarrior instanceof Warlord)) {
-                    aliveArmy.add(0, deadWarrior);
+                    aliveUnits.add(0, deadWarrior);
                 }
                 else {
                     if (!(deadWarrior instanceof Warlord)) {
@@ -64,9 +64,9 @@ public class Warlord extends Defender {
             }
         }
 
-        List<Warrior> lancers = aliveArmy.stream().filter(w -> w instanceof Lancer).toList();
-        List<Warrior> healers = aliveArmy.stream().filter(w -> w instanceof Healer).toList();
-        List<Warrior> others = aliveArmy.stream()
+        List<Warrior> lancers = aliveUnits.stream().filter(w -> w instanceof Lancer).toList();
+        List<Warrior> healers = aliveUnits.stream().filter(w -> w instanceof Healer).toList();
+        List<Warrior> others = aliveUnits.stream()
                                    .filter(w -> !(w instanceof Lancer ||
                                            w instanceof Healer || w instanceof Wizard)).toList();
 
@@ -96,7 +96,6 @@ public class Warlord extends Defender {
                     rearrangedArmy.add(others.get(i));
                 }
             }
-
         }
 
         if (this.isAlive()) {

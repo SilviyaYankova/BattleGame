@@ -7,6 +7,6 @@ public interface CanProcessCommand {
     default void processCommand(Command command, WarriorInArmy sender) {
     }
 
-    default void processCommand(Command command, Warrior sender) {
+    default void processCommand(Command command, Warrior deadWarrior) {
     }
 }

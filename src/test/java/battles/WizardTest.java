@@ -28,6 +28,7 @@ public class WizardTest {
         wizard1.equipWeapon(Weapon.newShield());
 
         assertEquals(0, wizard1.getWeapons().size());
+        assertEquals(0, wizard2.getWeapons().size());
     }
 
     @Test
@@ -124,7 +125,7 @@ public class WizardTest {
     void strongerFirstArmyWizardsWithoutMagicWandShouldReturnTrue() {
         var army1 = new Army()
                 .addUnits(WarriorImpl::new, 2)
-                .addUnits(() -> new Wizard(2), 1)
+                .addUnits(() -> new Wizard(2), 2)
                 .addUnits(Lancer::new, 3)
                 .addUnits(Defender::new, 1)
                 .addUnits(Warlord::new, 1);
@@ -211,7 +212,7 @@ public class WizardTest {
                 .addUnits(Rookie::new, 1)
                 .addUnits(Knight::new, 1);
 
-        army1.equipWarriorAtPosition(0, Weapon.newSword());
+//        army1.equipWarriorAtPosition(0, Weapon.newSword());
         army2.equipWarriorAtPosition(0, Weapon.newShield());
 
         army1.equipWarriorAtPosition(2, Weapon.newMagicWand());
@@ -220,7 +221,6 @@ public class WizardTest {
         army1.moveUnits();
         army2.moveUnits();
 
-        System.out.println("start");
         assertTrue(Battle.straightFight(army1, army2));
 
     }
