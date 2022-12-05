@@ -37,6 +37,11 @@ public class Army implements Iterable<Warrior> {
             if (warlord != null) return null;
             warlord = (Warlord) warrior;
         }
+        if (warrior instanceof Wizard) {
+            if (wizard != null) return null;
+            wizard = (Wizard) warrior;
+        }
+
         WarriorInArmy wrapped = new WarriorInArmy(warrior);
         if (head == null) {
             head = wrapped;
@@ -54,6 +59,10 @@ public class Army implements Iterable<Warrior> {
             if (warrior instanceof Warlord) {
                 if (warlord != null) continue;
                 warlord = (Warlord) warrior;
+            }
+            if (warrior instanceof Wizard) {
+                if (wizard != null) continue;
+                wizard = (Wizard) warrior;
             }
             WarriorInArmy wrapped = new WarriorInArmy(warrior);
 
@@ -138,6 +147,7 @@ public class Army implements Iterable<Warrior> {
 
     public Army moveUnits() {
         if (warlord != null) {
+
             for (WarriorInArmy warrior : troops) {
                 if (!warrior.isAlive()) {
                     deadUnits.add(warrior.unwrap());
@@ -145,6 +155,7 @@ public class Army implements Iterable<Warrior> {
             }
 
             Iterator<Warrior> iterator = warlord.moveUnits(this, deadUnits);
+
             head = tail = null;
 
             troops = new ArrayList<>();

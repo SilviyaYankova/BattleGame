@@ -2,9 +2,7 @@ package org.example.battles;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.characters.Army;
-import org.example.characters.Warlord;
 import org.example.characters.Warrior;
-import org.example.decorators.WarriorInArmy;
 
 @Slf4j
 public class Battle {
@@ -55,13 +53,17 @@ public class Battle {
 
             if (warrior1.isAlive()) {
                 log.atDebug().log("Army2 is trying to move units...");
+
                 army2.moveUnits();
+
                 if (army2.getWarlord() != null) {
                     it2 = army2.fistsAliveIterator();
                 }
             } else {
                 log.atDebug().log("Army1 is trying to move units...");
+
                 army1.moveUnits();
+
                 if (army1.getWarlord() != null) {
                     it1 = army1.fistsAliveIterator();
                 }

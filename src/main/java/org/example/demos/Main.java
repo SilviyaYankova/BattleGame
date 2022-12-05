@@ -7,7 +7,7 @@ import org.example.weapons.Weapon;
 public class Main {
     public static void main(String[] args) {
         var army1 = new Army()
-                .addUnits(() -> new Wizard(0), 1)
+                .addUnits(() -> new Wizard(0), 5)
                 .addUnits(Knight::new, 1)
                 .addUnits(Warlord::new, 1);
 
@@ -21,7 +21,6 @@ public class Main {
 
         army1.moveUnits();
         army2.moveUnits();
-
         System.out.println(Battle.fight(army1, army2));
     }
 }

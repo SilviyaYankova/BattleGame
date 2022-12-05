@@ -11,7 +11,7 @@ import org.example.weapons.Weapon;
 public class Wizard extends WarriorImpl implements CanProcessCommand {
     private int resurrectionPowers;
     private static final int ATTACK = 0;
-    private static final int MAX_COUNT_RESURRECTION = 1;
+    private static final int RESURRECTION_RESERVED_FOR_WARLORD = 1;
 
     public Wizard(int resurrectionPowers) {
         super(10);
@@ -35,8 +35,8 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
         this.resurrectionPowers = resurrectionPowers;
     }
 
-    public int getMaxCountResurrection() {
-        return MAX_COUNT_RESURRECTION;
+    public int getResurrectionReservedForWarlord() {
+        return RESURRECTION_RESERVED_FOR_WARLORD;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
 
     private void resurrect(Warrior sender) {
         int initialHealth = sender.getInitialHealth();
-        if (getResurrectionPowers() > getMaxCountResurrection()) {
+        if (getResurrectionPowers() > getResurrectionReservedForWarlord()) {
             log.atDebug().log("Wizard is resurrecting warrior;");
             log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
 
@@ -65,8 +65,8 @@ public class Wizard extends WarriorImpl implements CanProcessCommand {
 
             log.atDebug().log("\t - {} is resurrected", sender);
             log.atDebug().log("Wizard after resurrection: {}", resurrectionPowers);
-        } else if (getResurrectionPowers() == getMaxCountResurrection() && sender instanceof Warlord) {
-            log.atDebug().log("Wizard is resurrecting wizard...");
+        } else if (getResurrectionPowers() == getResurrectionReservedForWarlord() && sender instanceof Warlord) {
+            log.atDebug().log("Wizard is resurrecting warlord...");
             log.atDebug().log("Wizard before resurrection: {}", getResurrectionPowers());
 
             sender.setHealth(initialHealth);

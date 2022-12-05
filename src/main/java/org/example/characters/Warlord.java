@@ -36,23 +36,27 @@ public class Warlord extends Defender {
     Iterator<Warrior> moveUnits(Iterable<Warrior> army, List<Warrior> deadUnits) {
         log.atDebug().log("Warlord is moving units...");
 
-        List<Warrior> list = new ArrayList<>();
+        List<Warrior> aliveArmy = new ArrayList<>();
         for (Warrior warrior : army) {
             if (warrior != this) {
-                list.add(warrior);
+                aliveArmy.add(warrior);
             }
         }
 
-        Warrior wizard = list.stream().filter(w -> w instanceof Wizard).findFirst().orElse(null);
+        Warrior wizard = aliveArmy.stream().filter(w -> w instanceof Wizard).findFirst().orElse(null);
 
         if (!deadUnits.isEmpty() && wizard != null) {
             for (Warrior deadWarrior : deadUnits) {
                 log.atDebug().log("\t - Dead warrior: {}", deadWarrior);
+
                 WarriorInArmy wiz = new WarriorInArmy(wizard);
+
                 wiz.processCommand(ResurrectWarriorCommand.INSTANCE, deadWarrior);
+
                 if (deadWarrior.isAlive() && !(deadWarrior instanceof Warlord)) {
-                    list.add(0, deadWarrior);
-                } else {
+                    aliveArmy.add(0, deadWarrior);
+                }
+                else {
                     if (!(deadWarrior instanceof Warlord)) {
                     log.atDebug().log("\t - {} cannot be resurrected", deadWarrior);
                     }
@@ -60,47 +64,47 @@ public class Warlord extends Defender {
             }
         }
 
-        List<Warrior> lancers = list.stream().filter(w -> w instanceof Lancer).toList();
-        List<Warrior> healers = list.stream().filter(w -> w instanceof Healer).toList();
-        List<Warrior> others = list.stream()
+        List<Warrior> lancers = aliveArmy.stream().filter(w -> w instanceof Lancer).toList();
+        List<Warrior> healers = aliveArmy.stream().filter(w -> w instanceof Healer).toList();
+        List<Warrior> others = aliveArmy.stream()
                                    .filter(w -> !(w instanceof Lancer ||
                                            w instanceof Healer || w instanceof Wizard)).toList();
 
-        List<Warrior> result = new ArrayList<>();
+        List<Warrior> rearrangedArmy = new ArrayList<>();
 
         if (!lancers.isEmpty()) {
-            lancers.stream().limit(1).findFirst().ifPresent(result::add);
+            lancers.stream().limit(1).findFirst().ifPresent(rearrangedArmy::add);
         } else {
-            others.stream().limit(1).findFirst().ifPresent(result::add);
+            others.stream().limit(1).findFirst().ifPresent(rearrangedArmy::add);
         }
 
         if (!healers.isEmpty()) {
-            result.addAll(healers);
+            rearrangedArmy.addAll(healers);
         }
 
         if (lancers.size() > 1) {
             for (int i = 1; i < lancers.size(); i++) {
-                result.add(lancers.get(i));
+                rearrangedArmy.add(lancers.get(i));
             }
         }
 
         if (others.size() > 1) {
-            if (result.get(0) instanceof Lancer) {
-                result.addAll(others);
+            if (rearrangedArmy.get(0) instanceof Lancer) {
+                rearrangedArmy.addAll(others);
             } else {
                 for (int i = 1; i < others.size(); i++) {
-                    result.add(others.get(i));
+                    rearrangedArmy.add(others.get(i));
                 }
             }
 
         }
 
         if (this.isAlive()) {
-            result.add(this);
+            rearrangedArmy.add(this);
         }
         if (wizard != null) {
-            result.add(wizard);
+            rearrangedArmy.add(wizard);
         }
-        return result.iterator();
+        return rearrangedArmy.iterator();
     }
 }
