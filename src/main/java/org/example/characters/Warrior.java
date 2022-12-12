@@ -9,6 +9,8 @@ public interface Warrior {
 
     int getHealth();
 
+    int getInitialHealth();
+
     void setHealth(int health);
 
     default boolean isAlive() {
@@ -24,4 +26,6 @@ public interface Warrior {
     void equipWeapon(Weapon weapon);
 
     List<Weapon> getWeapons();
+
+    Warrior unwrap();
 }

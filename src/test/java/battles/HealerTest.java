@@ -81,10 +81,6 @@ public class HealerTest {
                                   .addUnits(Vampire::new, 6)
                                   .addUnits(Lancer::new, 4),
                           false),
-
-
-
-
                 arguments(new Army()
                                   .addUnits(Lancer::new, 1),
                           new Army()
