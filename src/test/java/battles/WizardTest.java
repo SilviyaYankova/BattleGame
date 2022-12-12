@@ -212,7 +212,6 @@ public class WizardTest {
                 .addUnits(Rookie::new, 1)
                 .addUnits(Knight::new, 1);
 
-//        army1.equipWarriorAtPosition(0, Weapon.newSword());
         army2.equipWarriorAtPosition(0, Weapon.newShield());
 
         army1.equipWarriorAtPosition(2, Weapon.newMagicWand());

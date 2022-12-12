@@ -7,7 +7,7 @@ import org.example.weapons.Weapon;
 @Slf4j
 public class Lancer extends WarriorImpl {
     private static final int ATTACK = 6;
-    private static final int VAMPIRISM = 50;
+    private static final int ADDITIONAL_DAMAGE = 50;
 
     @Override
     public int getAttack() {
@@ -15,8 +15,8 @@ public class Lancer extends WarriorImpl {
         return Math.max(0, ATTACK + bonusAttack);
     }
 
-    public int getVampirism() {
-        return VAMPIRISM;
+    public int getAdditionalDamage() {
+        return ADDITIONAL_DAMAGE;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Lancer extends WarriorImpl {
                 int healthAfterAttacked = opponent.getHealth();
                 int damageDealt = healthBeforeAttacked - healthAfterAttacked;
                 int percentages = 100;
-                int attack = damageDealt * getVampirism() / percentages;
+                int attack = damageDealt * getAdditionalDamage() / percentages;
                 nextWarrior.receiveDamage(attack);
                 log.atDebug().log("\t Lancer hits next warrior {}", nextWarrior.unwrap());
             }
